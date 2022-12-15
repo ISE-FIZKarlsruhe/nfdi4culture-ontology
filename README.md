@@ -1,6 +1,6 @@
 # NFDI4Culture Ontology
 
-This is the development version 1.1 of the NFDI4Culture Ontology. 
+This is the *development* version 1.1 of the NFDI4Culture Ontology. 
 
 For version 1.0 see the [release  v1.0](https://github.com/ISE-FIZKarlsruhe/nfdico-ontology/tree/v1.0)
 
