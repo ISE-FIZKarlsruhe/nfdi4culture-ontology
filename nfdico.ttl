@@ -37,7 +37,7 @@
                                                 n4c:E3095 ;
                                      dc:title "NFDI4Culture Ontology" ;
                                      dcterms:abstract "The NFDICO core ontology describes all resouces (datasets, data providers, persons, projects and other entities) in the data domain of NFDI4Culture (see: https:\\/\\/nfdi4culture.de\\/resource\\/about.html). It serves as the basis for the NFDI4Culture Knowledge Graph (see: https:\\/\\/nfdi4culture.de\\/resources\\/knowledge-graph.html) and contains mappings to numerous external vocabularies and ontologies."@en ;
-                                     dcterms:hasVersion "1.0-a.1" ;
+                                     dcterms:hasVersion "1.1-a.1" ;
                                      rdfs:label "NFDI4Culture Ontology (nfdico)" ;
                                      rdfs:seeAlso <https://nfdi4culture.de/ontology.json> ,
                                                   <https://nfdi4culture.de/ontology.nt> ,
