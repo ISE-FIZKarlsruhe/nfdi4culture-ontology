@@ -30,7 +30,6 @@
 @prefix wikidata: <https://www.wikidata.org/entity/> .
 @base <https://nfdi4culture.de/ontology#> .
 
-
 <https://nfdi4culture.de/ontology#> rdf:type owl:Ontology ;
                                      dc:creator n4c:E1925 ,
                                                 n4c:E2415 ,
@@ -911,7 +910,7 @@ cto:Consortium rdf:type owl:Class ;
 ###  https://nfdi4culture.de/ontology#ControlledVocabulary
 cto:ControlledVocabulary rdf:type owl:Class ;
                          rdfs:comment "A collection of contolled predifined vocabularies used in a specific domain to organise the knowledge."@en ;
-                         rdfs:label "conrolled vocabulary"@en ;
+                         rdfs:label "controlled vocabulary"@en ;
                          cto:example "AAT (Art & Architecture Thesaurus), Schema.org" .
 
 
@@ -956,7 +955,7 @@ cto:InstanceOfRDMTool rdf:type owl:Class ;
 ###  https://nfdi4culture.de/ontology#License
 cto:License rdf:type owl:Class ;
             rdfs:comment "A document that provides legal guidelines for the use of a resource, e.g. a software."@en ;
-            rdfs:label "License"@en ;
+            rdfs:label "license"@en ;
             cto:example "cc-by-3, Digital Peer Publishing Lizenz"@en .
 
 
@@ -1032,7 +1031,8 @@ cto:Project rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#ProvidedWork
 cto:ProvidedWork rdf:type owl:Class ;
-                 rdfs:subClassOf cto:Work .
+                 rdfs:subClassOf cto:Work ;
+                 rdfs:label "provided work"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Publication
@@ -1112,7 +1112,8 @@ cto:Work rdf:type owl:Class ;
                                          schema:IntangibleObject
                                          schema:Product
                                        )
-                         ] .
+                         ] ;
+         rdfs:label "work"@en .
 
 
 ###  https://w3id.org/okn/o/sd#Software
