@@ -623,8 +623,7 @@ cto:url rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  http://omv.ontoware.org/2005/05/ontology#LicenseModel
-ovm:LicenseModel rdf:type owl:Class ;
-                 owl:equivalentClass cto:License .
+ovm:LicenseModel rdf:type owl:Class .
 
 
 ###  http://omv.ontoware.org/2005/05/ontology#Ontology
@@ -659,7 +658,8 @@ obo:OBI_0000245 rdf:type owl:Class ;
 
 
 ###  http://purl.org/cerif/frapo/Service
-frapo:Service rdf:type owl:Class .
+frapo:Service rdf:type owl:Class ;
+              owl:equivalentClass cto:Service .
 
 
 ###  http://purl.org/dc/dcmitype/Collection
@@ -802,7 +802,8 @@ swo:SWO_0000001 rdf:type owl:Class ;
 
 
 ###  http://www.ebi.ac.uk/swo/SWO_0000002
-swo:SWO_0000002 rdf:type owl:Class .
+swo:SWO_0000002 rdf:type owl:Class ;
+                owl:equivalentClass cto:License .
 
 
 ###  http://www.w3.org/2006/vcard/ns#Individual
@@ -961,9 +962,6 @@ cto:InstanceOfRDMTool rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#License
 cto:License rdf:type owl:Class ;
-            rdfs:subClassOf dcterms:LicenseDocument ,
-                            vivo:Licence ,
-                            swo:SWO_0000002 ;
             rdfs:comment "A document that provides legal guidelines for the use of a resource, e.g. a software."@en ;
             rdfs:label "License"@en ;
             cto:example "cc-by-3, Digital Peer Publishing Lizenz"@en .
@@ -1066,8 +1064,6 @@ cto:SemanticExpressivity rdf:type owl:Class ;
 ###  https://nfdi4culture.de/ontology#Service
 cto:Service rdf:type owl:Class ;
             rdfs:subClassOf obo:ERO_0000005 ,
-                            frapo:Service ,
-                            dcmitype:Service ,
                             schema:Service ;
             rdfs:comment "A service, expertise or skill provided by an organisation or a person."@en ;
             rdfs:label "service"@en ;
