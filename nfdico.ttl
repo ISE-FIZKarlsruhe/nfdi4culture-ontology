@@ -675,7 +675,8 @@ dcterms:BibliographicResource rdf:type owl:Class .
 
 
 ###  http://purl.org/dc/terms/FileFormat
-dcterms:FileFormat rdf:type owl:Class .
+dcterms:FileFormat rdf:type owl:Class ;
+                   rdfs:subClassOf cto:MediaType .
 
 
 ###  http://purl.org/dc/terms/LicenseDocument
@@ -977,7 +978,6 @@ cto:Mapping rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#MediaType
 cto:MediaType rdf:type owl:Class ;
-              rdfs:subClassOf dcterms:FileFormat ;
               rdfs:comment "A format or a physical medium of digital data."@en ;
               rdfs:label "media type"@en ;
               cto:example "doc, avi, epub" .
