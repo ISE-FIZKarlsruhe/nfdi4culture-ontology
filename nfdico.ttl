@@ -419,7 +419,7 @@ cto:normOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#objectType
 cto:objectType rdf:type owl:ObjectProperty ;
                owl:inverseOf cto:objectTypeOf ;
-               rdfs:domain cto:CollectionOrDataset ;
+               rdfs:domain cto:Collection ;
                rdfs:range cto:ObjectType ;
                rdfs:comment "The property relates a data collection to the type of object it contains. "@en ;
                rdfs:label "object type"@en .
@@ -665,8 +665,7 @@ obo:ERO_0000005 rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/ERO_0001554
-obo:ERO_0001554 rdf:type owl:Class ;
-                owl:equivalentClass cto:CollectionOrDataset .
+obo:ERO_0001554 rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/GAZ_00000448
@@ -688,8 +687,7 @@ frapo:Service rdf:type owl:Class .
 
 
 ###  http://purl.org/dc/dcmitype/Collection
-dcmitype:Collection rdf:type owl:Class ;
-                    owl:equivalentClass cto:CollectionOrDataset .
+dcmitype:Collection rdf:type owl:Class .
 
 
 ###  http://purl.org/dc/dcmitype/Service
@@ -771,8 +769,7 @@ schema:CreativeWork rdf:type owl:Class .
 
 
 ###  http://schema.org/DataCatalog
-schema:DataCatalog rdf:type owl:Class ;
-                   owl:equivalentClass cto:CollectionOrDataset .
+schema:DataCatalog rdf:type owl:Class .
 
 
 ###  http://schema.org/IntangibleObject
@@ -806,8 +803,7 @@ doap:Project rdf:type owl:Class .
 
 
 ###  http://vivoweb.org/ontology/core#Dataset
-vivo:Dataset rdf:type owl:Class ;
-             owl:equivalentClass cto:CollectionOrDataset .
+vivo:Dataset rdf:type owl:Class .
 
 
 ###  http://vivoweb.org/ontology/core#Licence
@@ -851,8 +847,7 @@ dcat:DataService rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/dcat#Dataset
-dcat:Dataset rdf:type owl:Class ;
-             owl:equivalentClass cto:CollectionOrDataset .
+dcat:Dataset rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/org#Organization
@@ -928,11 +923,12 @@ cto:City rdf:type owl:Class ;
          cto:example "Berlin, Hannover, Kyiv"@en .
 
 
-###  https://nfdi4culture.de/ontology#CollectionOrDataset
-cto:CollectionOrDataset rdf:type owl:Class ;
-                        rdfs:comment "A collection of data published or curated by an organisation or a person."@en ;
-                        rdfs:label "collection or dataset"@en ;
-                        cto:example "RISM catalogue of musical sources"@en .
+###  https://nfdi4culture.de/ontology#Collection
+cto:Collection rdf:type owl:Class ;
+               rdfs:subClassOf schema:Product ;
+               rdfs:comment "A collection of data published or curated by an organisation or a person."@en ;
+               rdfs:label "collection"@en ;
+               cto:example "RISM catalogue of musical sources"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Consortium
