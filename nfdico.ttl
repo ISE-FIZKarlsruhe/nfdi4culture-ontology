@@ -30,6 +30,7 @@
 @prefix wikidata: <https://www.wikidata.org/entity/> .
 @base <https://nfdi4culture.de/ontology#> .
 
+
 <https://nfdi4culture.de/ontology#> rdf:type owl:Ontology ;
                                      dc:creator n4c:E1925 ,
                                                 n4c:E2415 ,
