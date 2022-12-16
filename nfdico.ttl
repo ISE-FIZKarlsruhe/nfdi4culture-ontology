@@ -111,10 +111,6 @@ dcterms:license rdf:type owl:ObjectProperty .
 dcterms:publisher rdf:type owl:ObjectProperty .
 
 
-###  http://rdfs.org/ns/void#sparqlEndpoint
-void:sparqlEndpoint rdf:type owl:ObjectProperty .
-
-
 ###  http://rdfs.org/ns/void#vocabulary
 void:vocabulary rdf:type owl:ObjectProperty .
 
@@ -622,25 +618,13 @@ cto:url rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://omv.ontoware.org/2005/05/ontology#LicenseModel
-ovm:LicenseModel rdf:type owl:Class .
-
-
 ###  http://omv.ontoware.org/2005/05/ontology#Ontology
 ovm:Ontology rdf:type owl:Class ;
              owl:equivalentClass cto:Ontology .
 
 
-###  http://omv.ontoware.org/2005/05/ontology#OntologyType
-ovm:OntologyType rdf:type owl:Class .
-
-
 ###  http://purl.obolibrary.org/obo/ERO_0000005
 obo:ERO_0000005 rdf:type owl:Class .
-
-
-###  http://purl.obolibrary.org/obo/ERO_0001554
-obo:ERO_0001554 rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/GAZ_00000448
@@ -662,14 +646,6 @@ frapo:Service rdf:type owl:Class ;
               owl:equivalentClass cto:Service .
 
 
-###  http://purl.org/dc/dcmitype/Collection
-dcmitype:Collection rdf:type owl:Class .
-
-
-###  http://purl.org/dc/dcmitype/Service
-dcmitype:Service rdf:type owl:Class .
-
-
 ###  http://purl.org/dc/terms/BibliographicResource
 dcterms:BibliographicResource rdf:type owl:Class .
 
@@ -677,10 +653,6 @@ dcterms:BibliographicResource rdf:type owl:Class .
 ###  http://purl.org/dc/terms/FileFormat
 dcterms:FileFormat rdf:type owl:Class ;
                    rdfs:subClassOf cto:MediaType .
-
-
-###  http://purl.org/dc/terms/LicenseDocument
-dcterms:LicenseDocument rdf:type owl:Class .
 
 
 ###  http://purl.org/dc/terms/Location
@@ -695,14 +667,6 @@ dcterms:MediaType rdf:type owl:Class ;
 ###  http://purl.org/dc/terms/Standard
 dcterms:Standard rdf:type owl:Class ;
                  owl:equivalentClass cto:Standard .
-
-
-###  http://purl.org/ontology/bibo/Website
-bibo:Website rdf:type owl:Class .
-
-
-###  http://purl.org/spar/fabio/AcademicSubject
-fabio:AcademicSubject rdf:type owl:Class .
 
 
 ###  http://purl.org/spar/fabio/AuthorityFile
@@ -745,10 +709,6 @@ schema:ComputerLanguage rdf:type owl:Class .
 schema:CreativeWork rdf:type owl:Class .
 
 
-###  http://schema.org/DataCatalog
-schema:DataCatalog rdf:type owl:Class .
-
-
 ###  http://schema.org/IntangibleObject
 schema:IntangibleObject rdf:type owl:Class .
 
@@ -767,20 +727,8 @@ schema:Person rdf:type owl:Class ;
 schema:Product rdf:type owl:Class .
 
 
-###  http://schema.org/Project
-schema:Project rdf:type owl:Class .
-
-
 ###  http://schema.org/Service
 schema:Service rdf:type owl:Class .
-
-
-###  http://vivoweb.org/ontology/core#Dataset
-vivo:Dataset rdf:type owl:Class .
-
-
-###  http://vivoweb.org/ontology/core#Licence
-vivo:Licence rdf:type owl:Class .
 
 
 ###  http://vivoweb.org/ontology/core#Location
@@ -809,14 +757,6 @@ vcard:Location rdf:type owl:Class .
 ###  http://www.w3.org/2006/vcard/ns#Organization
 vcard:Organization rdf:type owl:Class ;
                    owl:equivalentClass cto:Organization .
-
-
-###  http://www.w3.org/ns/dcat#DataService
-dcat:DataService rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/dcat#Dataset
-dcat:Dataset rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/org#Organization
