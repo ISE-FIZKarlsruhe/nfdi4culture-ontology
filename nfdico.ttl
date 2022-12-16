@@ -426,7 +426,7 @@ cto:objectTypeOf rdf:type owl:ObjectProperty ;
 cto:ontologyType rdf:type owl:ObjectProperty ;
                  owl:inverseOf cto:ontologyTypeOf ;
                  rdfs:domain cto:Ontology ;
-                 rdfs:range cto:OntologyType ;
+                 rdfs:range cto:SemanticExpressivity ;
                  rdfs:comment "The property relates an ontology to its type. "@en ;
                  rdfs:label "ontology type"@en .
 
@@ -633,8 +633,7 @@ ovm:Ontology rdf:type owl:Class ;
 
 
 ###  http://omv.ontoware.org/2005/05/ontology#OntologyType
-ovm:OntologyType rdf:type owl:Class ;
-                 owl:equivalentClass cto:OntologyType .
+ovm:OntologyType rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/ERO_0000005
@@ -676,7 +675,8 @@ dcterms:BibliographicResource rdf:type owl:Class .
 
 
 ###  http://purl.org/dc/terms/FileFormat
-dcterms:FileFormat rdf:type owl:Class .
+dcterms:FileFormat rdf:type owl:Class ;
+                   rdfs:subClassOf cto:MediaType .
 
 
 ###  http://purl.org/dc/terms/LicenseDocument
@@ -978,7 +978,6 @@ cto:Mapping rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#MediaType
 cto:MediaType rdf:type owl:Class ;
-              rdfs:subClassOf dcterms:FileFormat ;
               rdfs:comment "A format or a physical medium of digital data."@en ;
               rdfs:label "media type"@en ;
               cto:example "doc, avi, epub" .
@@ -997,13 +996,6 @@ cto:Ontology rdf:type owl:Class ;
              rdfs:comment "An ontology used for formal representations of concepts in a resource, e.g. in data collection."@en ;
              rdfs:label "ontology"@en ;
              cto:example "lido, gndo, dbo, dublin-core" .
-
-
-###  https://nfdi4culture.de/ontology#OntologyType
-cto:OntologyType rdf:type owl:Class ;
-                 rdfs:comment "A resource that identifies the type of an ontology."@en ;
-                 rdfs:label "ontology type"@en ;
-                 cto:example "encoding\\/vocabulary, ontology, controlled vocabulary"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Organization
@@ -1062,6 +1054,13 @@ cto:Publication rdf:type owl:Class ;
                 rdfs:comment "A published scholarly work that reports on ongoing activity about or within a resource, e.g. a dataset."@en ;
                 rdfs:label "publication"@en ;
                 cto:example "MusiXplora: Visual analysis of a musicological encyclopedia, Textkategorien in kompositorischen Werkstattdokumenten" .
+
+
+###  https://nfdi4culture.de/ontology#SemanticExpressivity
+cto:SemanticExpressivity rdf:type owl:Class ;
+                         rdfs:comment "A resource that identifies the type of an ontology."@en ;
+                         rdfs:label "semantic expressivity"@en ;
+                         cto:example "encoding\\/vocabulary, ontology, controlled vocabulary"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Service
