@@ -775,10 +775,6 @@ schema:Project rdf:type owl:Class .
 schema:Service rdf:type owl:Class .
 
 
-###  http://usefulinc.com/ns/doap#Project
-doap:Project rdf:type owl:Class .
-
-
 ###  http://vivoweb.org/ontology/core#Dataset
 vivo:Dataset rdf:type owl:Class .
 
@@ -789,11 +785,6 @@ vivo:Licence rdf:type owl:Class .
 
 ###  http://vivoweb.org/ontology/core#Location
 vivo:Location rdf:type owl:Class .
-
-
-###  http://vivoweb.org/ontology/core#ResearchProject
-vivo:ResearchProject rdf:type owl:Class ;
-                     owl:equivalentClass cto:Project .
 
 
 ###  http://www.ebi.ac.uk/swo/SWO_0000001
@@ -848,7 +839,8 @@ foaf:Person rdf:type owl:Class ;
 
 
 ###  http://xmlns.com/foaf/0.1/Project
-foaf:Project rdf:type owl:Class .
+foaf:Project rdf:type owl:Class ;
+             owl:equivalentClass cto:Project .
 
 
 ###  https://dbpedia.org/ontology/AcademicSubject
@@ -1032,9 +1024,6 @@ cto:ProgrammingLanguage rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#Project
 cto:Project rdf:type owl:Class ;
-            rdfs:subClassOf schema:Project ,
-                            doap:Project ,
-                            foaf:Project ;
             rdfs:comment "A scientific or business endeavor that aims to conclude an investigation or to answer a research question."@en ;
             rdfs:label "project"@en ;
             cto:example "Freisch\\u00fctz digital, Corpus Vitrearum Medii Aevi" .
