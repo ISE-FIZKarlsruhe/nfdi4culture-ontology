@@ -161,6 +161,7 @@ dbo:country rdf:type owl:ObjectProperty .
 ###  https://nfdi4culture.de/ontology#authorityControl
 cto:authorityControl rdf:type owl:ObjectProperty ;
                      owl:inverseOf cto:authorityOf ;
+                     rdfs:domain cto:Work ;
                      rdfs:range cto:Authority ;
                      rdfs:comment "The property is a relationship between data and an authority data is based on."@en ;
                      rdfs:label "authority control"@en .
@@ -188,6 +189,7 @@ cto:authorityTypeOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#bestPractice
 cto:bestPractice rdf:type owl:ObjectProperty ;
                  owl:inverseOf cto:bestPracticeOf ;
+                 rdfs:domain cto:Work ;
                  rdfs:range cto:BestPractice ;
                  rdfs:comment "The property is a relationship between a data portal and the best practice."@en ;
                  rdfs:label "best practice"@en .
@@ -201,6 +203,7 @@ cto:bestPracticeOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#contactPoint
 cto:contactPoint rdf:type owl:ObjectProperty ;
                  owl:inverseOf cto:contactPointOf ;
+                 rdfs:domain cto:Work ;
                  rdfs:range [ rdf:type owl:Class ;
                               owl:unionOf ( cto:Organization
                                             cto:Person
@@ -238,6 +241,7 @@ cto:countryOf rdf:type owl:ObjectProperty ;
 cto:exportFormat rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf dcterms:format ;
                  owl:inverseOf cto:exportFormatOf ;
+                 rdfs:domain cto:Work ;
                  rdfs:range cto:MediaType ;
                  rdfs:comment "The property relates a contrbution to the format available for the export of a contribution."@en ;
                  rdfs:label "export format"@en .
@@ -294,6 +298,11 @@ cto:fundingOrganisation rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#fundingOrganisationOf
 cto:fundingOrganisationOf rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf cto:funderOf ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( cto:Project
+                                                      cto:Work
+                                                    )
+                                      ] ;
                           rdfs:label "funding organisation of"@en .
 
 
@@ -301,6 +310,7 @@ cto:fundingOrganisationOf rdf:type owl:ObjectProperty ;
 cto:fundingProject rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf cto:funder ;
                    owl:inverseOf cto:fundingProjectOf ;
+                   rdfs:domain cto:Work ;
                    rdfs:range cto:Project ;
                    rdfs:comment "The property relateds a contribution to the project that provided funding for it."@en ;
                    rdfs:label "funding project"@en .
@@ -330,6 +340,7 @@ cto:instanceOf rdf:type owl:ObjectProperty ;
 cto:license rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf dcterms:license ;
             owl:inverseOf cto:licenseOf ;
+            rdfs:domain cto:Work ;
             rdfs:range cto:License ;
             rdfs:comment "The property is a relationship between a contribution and a license file." ;
             rdfs:label "license"@en .
@@ -358,6 +369,7 @@ cto:locationOf rdf:type owl:ObjectProperty ;
 cto:mapping rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf dk:mapsTo ;
             owl:inverseOf cto:mappingOf ;
+            rdfs:domain cto:Work ;
             rdfs:range cto:Mapping ;
             rdfs:comment "The property is a relationship between a a data resource and its various representations, e.g. same resource that exists in different data formats. "@en ;
             rdfs:label "mapping"@en .
@@ -372,6 +384,7 @@ cto:mappingOf rdf:type owl:ObjectProperty ;
 cto:mediaType rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dcterms:format ;
               owl:inverseOf cto:mediaTypeOf ;
+              rdfs:domain cto:Work ;
               rdfs:range cto:MediaType ;
               rdfs:comment "The property relates a contrbution to its data format."@en ;
               rdfs:label "media type"@en .
@@ -393,7 +406,7 @@ cto:norm rdf:type owl:ObjectProperty ;
                                      cto:Service
                                    )
                      ] ;
-         rdfs:range cto:Norm ;
+         rdfs:range cto:Standard ;
          rdfs:comment "The property is a relationship between a resource and the international standard or norm."@en ;
          rdfs:label "norm"@en .
 
@@ -472,6 +485,7 @@ cto:provisionType rdf:type owl:ObjectProperty ;
 cto:publisher rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dcterms:publisher ;
               owl:inverseOf cto:publisherOf ;
+              rdfs:domain cto:Work ;
               rdfs:range cto:Organization ;
               rdfs:comment "The property is a relationship between a resource and an organisation responsible for publishing it. "@en ;
               rdfs:label "publisher"@en .
@@ -508,6 +522,7 @@ cto:serviceTypeOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#software
 cto:software rdf:type owl:ObjectProperty ;
              owl:inverseOf cto:sofwareOf ;
+             rdfs:domain cto:Work ;
              rdfs:range cto:Software ;
              rdfs:comment "The property is a relationship between a service and a software it uses."@en ;
              rdfs:label "software"@en .
@@ -526,6 +541,11 @@ cto:sofwareOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#sparqlEndpoint
 cto:sparqlEndpoint rdf:type owl:ObjectProperty ;
                    owl:inverseOf cto:sparqlEndpointOf ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( cto:RDMInfrastructure
+                                               cto:Work
+                                             )
+                               ] ;
                    rdfs:range cto:SparqlEndpoint ;
                    rdfs:comment "The property relates a data resource to its SPARQL Endpoint. "@en ;
                    rdfs:label "sparql endpoint"@en .
@@ -540,6 +560,7 @@ cto:sparqlEndpointOf rdf:type owl:ObjectProperty ;
 cto:subjectArea rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf dcat:theme ;
                 owl:inverseOf cto:subjectAreaOf ;
+                rdfs:domain cto:Work ;
                 rdfs:range cto:AcademicDiscipline ;
                 rdfs:comment "The property is a relationship between a contribution and its academic discipline, subject area or domain. "@en ;
                 rdfs:label "subject area"@en .
@@ -558,6 +579,12 @@ cto:subsidiaryOrganization rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#technology
 cto:technology rdf:type owl:ObjectProperty ;
                owl:inverseOf cto:technologyOf ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( cto:BestPractice
+                                           cto:RDMInfrastructure
+                                           cto:Work
+                                         )
+                           ] ;
                rdfs:range cto:Technology ;
                rdfs:comment "The property is a relationship between a resource and a technology it uses. "@en ;
                rdfs:label "technology"@en .
@@ -572,6 +599,12 @@ cto:technologyOf rdf:type owl:ObjectProperty ;
 cto:vocabulary rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf void:vocabulary ;
                owl:inverseOf cto:vocabularyOf ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( cto:BestPractice
+                                           cto:RDMInfrastructure
+                                           cto:Work
+                                         )
+                           ] ;
                rdfs:range cto:Ontology ;
                rdfs:comment "The property is a relationship between a contribution and a vocabulary it uses."@en ;
                rdfs:label "vocabulary"@en .
@@ -686,7 +719,7 @@ dcterms:MediaType rdf:type owl:Class ;
 
 ###  http://purl.org/dc/terms/Standard
 dcterms:Standard rdf:type owl:Class ;
-                 owl:equivalentClass cto:Norm .
+                 owl:equivalentClass cto:Standard .
 
 
 ###  http://purl.org/ontology/bibo/Website
@@ -902,6 +935,12 @@ cto:CollectionOrDataset rdf:type owl:Class ;
                         cto:example "RISM catalogue of musical sources"@en .
 
 
+###  https://nfdi4culture.de/ontology#Consortium
+cto:Consortium rdf:type owl:Class ;
+               rdfs:subClassOf cto:Organization ;
+               rdfs:label "consortium"@en .
+
+
 ###  https://nfdi4culture.de/ontology#ControlledVocabulary
 cto:ControlledVocabulary rdf:type owl:Class ;
                          rdfs:comment "A collection of contolled predifined vocabularies used in a specific domain to organise the knowledge."@en ;
@@ -918,6 +957,7 @@ cto:Country rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#DataPortal
 cto:DataPortal rdf:type owl:Class ;
+               rdfs:subClassOf schema:Service ;
                rdfs:comment "An online platform that provides access to data collections and datasets."@en ;
                rdfs:label "data portal"@en ;
                cto:example "Bach digital, KultSam, MusiXplora"@en .
@@ -952,7 +992,7 @@ cto:License rdf:type owl:Class ;
                             vivo:Licence ,
                             swo:SWO_0000002 ;
             rdfs:comment "A document that provides legal guidelines for the use of a resource, e.g. a software."@en ;
-            rdfs:label "license"@en ;
+            rdfs:label "License"@en ;
             cto:example "cc-by-3, Digital Peer Publishing Lizenz"@en .
 
 
@@ -969,14 +1009,6 @@ cto:MediaType rdf:type owl:Class ;
               rdfs:comment "A format or a physical medium of digital data."@en ;
               rdfs:label "media type"@en ;
               cto:example "doc, avi, epub" .
-
-
-###  https://nfdi4culture.de/ontology#Norm
-cto:Norm rdf:type owl:Class ;
-         rdfs:subClassOf schema:Product ;
-         rdfs:comment "An international standard and norm that can be used to evaluate or create services."@en ;
-         rdfs:label "norm"@en ;
-         cto:example "ISO 15511, DINI-Zertifikat" .
 
 
 ###  https://nfdi4culture.de/ontology#ObjectType
@@ -1118,6 +1150,14 @@ cto:Specification rdf:type owl:Class ;
                   rdfs:comment "A set of requirements, guidelines, standards contributed by an organisation or a person."@en ;
                   rdfs:label "specification"@en ;
                   cto:example "RDF, SPARQL, Federation" .
+
+
+###  https://nfdi4culture.de/ontology#Standard
+cto:Standard rdf:type owl:Class ;
+             rdfs:subClassOf cto:Specification ;
+             rdfs:comment "An international standard and norm that can be used to evaluate or create services."@en ;
+             rdfs:label "standard"@en ;
+             cto:example "ISO 15511, DINI-Zertifikat" .
 
 
 ###  https://nfdi4culture.de/ontology#Technology
