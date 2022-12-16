@@ -325,7 +325,6 @@ cto:fundingProjectOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#instance
 cto:instance rdf:type owl:ObjectProperty ;
              owl:inverseOf cto:instanceOf ;
-             rdfs:domain cto:RDMTool ;
              rdfs:range cto:InstanceOfRDMTool ;
              rdfs:comment "The property is a relationship between an RDM Tool to its running instance."@en ;
              rdfs:label "instance"@en .
@@ -399,13 +398,6 @@ cto:mediaTypeOf rdf:type owl:ObjectProperty ;
 cto:norm rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf dcterms:conformsTo ;
          owl:inverseOf cto:normOf ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( cto:BestPractice
-                                     cto:DevelopmentWork
-                                     cto:RDMInfrastructure
-                                     cto:Service
-                                   )
-                     ] ;
          rdfs:range cto:Standard ;
          rdfs:comment "The property is a relationship between a resource and the international standard or norm."@en ;
          rdfs:label "norm"@en .
@@ -541,12 +533,8 @@ cto:sofwareOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#sparqlEndpoint
 cto:sparqlEndpoint rdf:type owl:ObjectProperty ;
                    owl:inverseOf cto:sparqlEndpointOf ;
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( cto:RDMInfrastructure
-                                               cto:Work
-                                             )
-                               ] ;
-                   rdfs:range cto:SparqlEndpoint ;
+                   rdfs:domain cto:Work ;
+                   rdfs:range cto:Work ;
                    rdfs:comment "The property relates a data resource to its SPARQL Endpoint. "@en ;
                    rdfs:label "sparql endpoint"@en .
 
@@ -579,13 +567,8 @@ cto:subsidiaryOrganization rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#technology
 cto:technology rdf:type owl:ObjectProperty ;
                owl:inverseOf cto:technologyOf ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( cto:BestPractice
-                                           cto:RDMInfrastructure
-                                           cto:Work
-                                         )
-                           ] ;
-               rdfs:range cto:Technology ;
+               rdfs:domain cto:Work ;
+               rdfs:range cto:TechnologicalMeans ;
                rdfs:comment "The property is a relationship between a resource and a technology it uses. "@en ;
                rdfs:label "technology"@en .
 
@@ -599,12 +582,6 @@ cto:technologyOf rdf:type owl:ObjectProperty ;
 cto:vocabulary rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf void:vocabulary ;
                owl:inverseOf cto:vocabularyOf ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( cto:BestPractice
-                                           cto:RDMInfrastructure
-                                           cto:Work
-                                         )
-                           ] ;
                rdfs:range cto:Ontology ;
                rdfs:comment "The property is a relationship between a contribution and a vocabulary it uses."@en ;
                rdfs:label "vocabulary"@en .
@@ -1087,30 +1064,6 @@ cto:Publication rdf:type owl:Class ;
                 cto:example "MusiXplora: Visual analysis of a musicological encyclopedia, Textkategorien in kompositorischen Werkstattdokumenten" .
 
 
-###  https://nfdi4culture.de/ontology#RDMInfrastructure
-cto:RDMInfrastructure rdf:type owl:Class ;
-                      rdfs:subClassOf schema:Product ;
-                      rdfs:comment "A infrastructure used to provide research data management and enforce research data management policies."@en ;
-                      rdfs:label "research data management infrastructure"@en ;
-                      cto:example "correspSearch, Bildindex Kunst und Architektur"@en .
-
-
-###  https://nfdi4culture.de/ontology#RDMService
-cto:RDMService rdf:type owl:Class ;
-               rdfs:subClassOf cto:RDMInfrastructure ;
-               rdfs:comment "A service that aims at providing support at every step of research data management, e.g. investigation, development , sustainbility of research data."@en ;
-               rdfs:label "research data management service"@en ;
-               cto:example "Untersuchung und Entwicklung von bildbasierten Such- und Analyseverfahren, Nachhaltigkeit f\\u00fcr Forschungssoftware"@de .
-
-
-###  https://nfdi4culture.de/ontology#RDMTool
-cto:RDMTool rdf:type owl:Class ;
-            rdfs:subClassOf cto:RDMInfrastructure ;
-            rdfs:comment "A software tool used for tackling a specific research data management problem."@en ;
-            rdfs:label "research data management tool"@en ;
-            cto:example "Annotationswerkzeug f\\u00fcr ethnographisch erhobene Daten der Musikwissenschaft"@de .
-
-
 ###  https://nfdi4culture.de/ontology#Service
 cto:Service rdf:type owl:Class ;
             rdfs:subClassOf obo:ERO_0000005 ,
@@ -1137,10 +1090,6 @@ cto:Software rdf:type owl:Class ;
              cto:example "Edirom, Muscat" .
 
 
-###  https://nfdi4culture.de/ontology#SparqlEndpoint
-cto:SparqlEndpoint rdf:type owl:Class .
-
-
 ###  https://nfdi4culture.de/ontology#Specification
 cto:Specification rdf:type owl:Class ;
                   rdfs:comment "A set of requirements, guidelines, standards contributed by an organisation or a person."@en ;
@@ -1156,12 +1105,11 @@ cto:Standard rdf:type owl:Class ;
              cto:example "ISO 15511, DINI-Zertifikat" .
 
 
-###  https://nfdi4culture.de/ontology#Technology
-cto:Technology rdf:type owl:Class ;
-               rdfs:subClassOf schema:Product ;
-               rdfs:comment "A technology, e.g. a web application or a programming framework used in a resource."@en ;
-               rdfs:label "technology"@en ;
-               cto:example "Groovy on Grails, Angular"@en .
+###  https://nfdi4culture.de/ontology#TechnologicalMeans
+cto:TechnologicalMeans rdf:type owl:Class ;
+                       rdfs:comment "A technology, e.g. a web application or a programming framework used in a resource."@en ;
+                       rdfs:label "technological means"@en ;
+                       cto:example "Groovy on Grails, Angular"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Website
