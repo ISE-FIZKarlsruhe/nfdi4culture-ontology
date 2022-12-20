@@ -205,7 +205,7 @@ cto:contactPoint rdf:type owl:ObjectProperty ;
                                             cto:Person
                                           )
                             ] ;
-                 rdfs:comment "The property is a relationship between a contribution and a contact point."@en ;
+                 rdfs:comment "The property is a relationship between a work and a contact point."@en ;
                  rdfs:label "contact point"@en .
 
 
@@ -239,7 +239,7 @@ cto:exportFormat rdf:type owl:ObjectProperty ;
                  owl:inverseOf cto:exportFormatOf ;
                  rdfs:domain cto:Work ;
                  rdfs:range cto:MediaType ;
-                 rdfs:comment "The property relates a contrbution to the format available for the export of a contribution."@en ;
+                 rdfs:comment "The property relates a work to the format available for the export of a work."@en ;
                  rdfs:label "export format"@en .
 
 
@@ -287,7 +287,7 @@ cto:fundingOrganisation rdf:type owl:ObjectProperty ;
                                            cto:funder ;
                         owl:inverseOf cto:fundingOrganisationOf ;
                         rdfs:range cto:Organization ;
-                        rdfs:comment "The property relates a contribution or a project to the organisation that provided funding for it. "@en ;
+                        rdfs:comment "The property relates a work or a project to the organisation that provided funding for it."@en ;
                         rdfs:label "funding organisation"@en .
 
 
@@ -308,7 +308,7 @@ cto:fundingProject rdf:type owl:ObjectProperty ;
                    owl:inverseOf cto:fundingProjectOf ;
                    rdfs:domain cto:Work ;
                    rdfs:range cto:Project ;
-                   rdfs:comment "The property relateds a contribution to the project that provided funding for it."@en ;
+                   rdfs:comment "The property relateds a work to the project that provided funding for it."@en ;
                    rdfs:label "funding project"@en .
 
 
@@ -337,7 +337,7 @@ cto:license rdf:type owl:ObjectProperty ;
             owl:inverseOf cto:licenseOf ;
             rdfs:domain cto:Work ;
             rdfs:range cto:License ;
-            rdfs:comment "The property is a relationship between a contribution and a license file." ;
+            rdfs:comment "The property is a relationship between a work and a license file." ;
             rdfs:label "license"@en .
 
 
@@ -546,7 +546,7 @@ cto:subjectArea rdf:type owl:ObjectProperty ;
                 owl:inverseOf cto:subjectAreaOf ;
                 rdfs:domain cto:Work ;
                 rdfs:range cto:AcademicDiscipline ;
-                rdfs:comment "The property is a relationship between a contribution and its academic discipline, subject area or domain. "@en ;
+                rdfs:comment "The property is a relationship between a work and its academic discipline, subject area or domain."@en ;
                 rdfs:label "subject area"@en .
 
 
@@ -579,7 +579,7 @@ cto:vocabulary rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf void:vocabulary ;
                owl:inverseOf cto:vocabularyOf ;
                rdfs:range cto:Ontology ;
-               rdfs:comment "The property is a relationship between a contribution and a vocabulary it uses."@en ;
+               rdfs:comment "The property is a relationship between a work and a vocabulary it uses."@en ;
                rdfs:label "vocabulary"@en .
 
 
