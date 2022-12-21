@@ -797,7 +797,7 @@ cto:AcademicDiscipline rdf:type owl:Class ;
                        rdfs:subClassOf fabio:SubjectDiscipline ,
                                        dbo:AcademicSubject ,
                                        modsci:Science ;
-                       rdfs:comment "An academic discipline, a research field or domain of a resource, e.g. a data portal."@en ;
+                       rdfs:comment "An academic discipline, a research field or domain of a resource, e.g. a data portal or a filed of study of a person."@en ;
                        rdfs:label "academic discipline"@en ;
                        cto:example wikidata:Q12271 ,
                                    "Architecture, Art History, Musicology, Media Studies, Performing Arts"@en .
