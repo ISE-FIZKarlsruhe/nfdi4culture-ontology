@@ -421,7 +421,7 @@ cto:objectTypeOf rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#ontologyType
 cto:ontologyType rdf:type owl:ObjectProperty ;
                  owl:inverseOf cto:ontologyTypeOf ;
-                 rdfs:domain cto:Ontology ;
+                 rdfs:domain cto:SemanticExpressivity ;
                  rdfs:range cto:SemanticExpressivity ;
                  rdfs:comment "The property relates an ontology to its type. "@en ;
                  rdfs:label "ontology type"@en .
@@ -578,7 +578,7 @@ cto:technologyOf rdf:type owl:ObjectProperty ;
 cto:vocabulary rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf void:vocabulary ;
                owl:inverseOf cto:vocabularyOf ;
-               rdfs:range cto:Ontology ;
+               rdfs:range cto:SemanticExpressivity ;
                rdfs:comment "The property is a relationship between a work and a vocabulary it uses."@en ;
                rdfs:label "vocabulary"@en .
 
@@ -619,8 +619,7 @@ cto:url rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  http://omv.ontoware.org/2005/05/ontology#Ontology
-ovm:Ontology rdf:type owl:Class ;
-             owl:equivalentClass cto:Ontology .
+ovm:Ontology rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/ERO_0000005
@@ -674,14 +673,8 @@ fabio:AuthorityFile rdf:type owl:Class ;
                     owl:equivalentClass cto:Authority .
 
 
-###  http://purl.org/spar/fabio/ControlledVocabulary
-fabio:ControlledVocabulary rdf:type owl:Class ;
-                           owl:equivalentClass cto:ControlledVocabulary .
-
-
 ###  http://purl.org/spar/fabio/Ontology
-fabio:Ontology rdf:type owl:Class ;
-               owl:equivalentClass cto:Ontology .
+fabio:Ontology rdf:type owl:Class .
 
 
 ###  http://purl.org/spar/fabio/ScholarlyWork
@@ -847,13 +840,6 @@ cto:Consortium rdf:type owl:Class ;
                rdfs:label "consortium"@en .
 
 
-###  https://nfdi4culture.de/ontology#ControlledVocabulary
-cto:ControlledVocabulary rdf:type owl:Class ;
-                         rdfs:comment "A collection of contolled predifined vocabularies used in a specific domain to organise the knowledge."@en ;
-                         rdfs:label "controlled vocabulary"@en ;
-                         cto:example "AAT (Art & Architecture Thesaurus), Schema.org" .
-
-
 ###  https://nfdi4culture.de/ontology#Country
 cto:Country rdf:type owl:Class ;
             rdfs:subClassOf cto:Place ;
@@ -920,14 +906,6 @@ cto:ObjectType rdf:type owl:Class ;
                cto:example "book, photograph, music sheet"@en .
 
 
-###  https://nfdi4culture.de/ontology#Ontology
-cto:Ontology rdf:type owl:Class ;
-             rdfs:subClassOf schema:Product ;
-             rdfs:comment "An ontology used for formal representations of concepts in a resource, e.g. in data collection."@en ;
-             rdfs:label "ontology"@en ;
-             cto:example "lido, gndo, dbo, dublin-core" .
-
-
 ###  https://nfdi4culture.de/ontology#Organization
 cto:Organization rdf:type owl:Class ;
                  rdfs:comment "An organisation of some kind, e.g. research organisation or business organisation"@en ;
@@ -986,9 +964,9 @@ cto:Publication rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#SemanticExpressivity
 cto:SemanticExpressivity rdf:type owl:Class ;
-                         rdfs:comment "A resource that identifies the type of an ontology."@en ;
+                         rdfs:comment "A resource that identifies the level of the semantic expressivity of the work. Five instances are now included in nfdicore."@en ;
                          rdfs:label "semantic expressivity"@en ;
-                         cto:example "encoding\\/vocabulary, ontology, controlled vocabulary"@en .
+                         cto:example "controlled vocabulary, ontology, taxonomy"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Service
@@ -1098,6 +1076,41 @@ modsci:Science rdf:type owl:Class .
                                                 void:Dataset ;
                                        dc:format "text/turtle" ;
                                        void:feature <http://www.w3.org/ns/formats/Turtle> .
+
+
+###  https://nfdi4culture.de/ontology#ControlledVocabulary
+cto:ControlledVocabulary rdf:type owl:NamedIndividual ,
+                                  cto:SemanticExpressivity ;
+                         rdfs:comment "A list of terms, natural language definitions and naming conventions. In comparisson to a glossary, there is a dedicated curation mechanism for new terms in a controlled vocabulary."@en ;
+                         rdfs:label "controlled vocabulary"@en .
+
+
+###  https://nfdi4culture.de/ontology#Glossary
+cto:Glossary rdf:type owl:NamedIndividual ,
+                      cto:SemanticExpressivity ;
+             rdfs:comment "A list of terms and their with natural language definitions."@en ;
+             rdfs:label "glossary"@en .
+
+
+###  https://nfdi4culture.de/ontology#Ontology
+cto:Ontology rdf:type owl:NamedIndividual ,
+                      cto:SemanticExpressivity ;
+             rdfs:comment "A complete, machine-readable specification of a conceptualization using URIs (and then IRIs) for all elements, properties and relationship types."@en ;
+             rdfs:label "onotology"@en .
+
+
+###  https://nfdi4culture.de/ontology#Taxonomy
+cto:Taxonomy rdf:type owl:NamedIndividual ,
+                      cto:SemanticExpressivity ;
+             rdfs:comment "A data model in a class hierarchy, where all concepts inherit their behaviour from the super-class concept. Taxonomies can be strict or non strict and can contain instances."@en ;
+             rdfs:label "taxonomy"@en .
+
+
+###  https://nfdi4culture.de/ontology#Thesaurus
+cto:Thesaurus rdf:type owl:NamedIndividual ,
+                       cto:SemanticExpressivity ;
+              rdfs:comment "A structured list of terms and relations between the terms, as e.g. broader/narrower."@en ;
+              rdfs:label "thesaurus"@en .
 
 
 ###  https://nfdi4culture.de/ontology/about.html
