@@ -1,0 +1,1093 @@
+@prefix : <https://nfdi4culture.de/ontology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dk: <http://www.data-knowledge.org/dk/> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix cto: <https://nfdi4culture.de/ontology#> .
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix n4c: <https://nfdi4culture.de/id/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix ovm: <http://omv.ontoware.org/2005/05/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix swo: <http://www.ebi.ac.uk/swo/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix modsci: <https://w3id.org/skgo/modsci#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix wikidata: <https://www.wikidata.org/entity/> .
+@base <https://nfdi4culture.de/ontology#> .
+
+<https://nfdi4culture.de/ontology#> rdf:type owl:Ontology ;
+                                     dc:creator n4c:E1925 ,
+                                                n4c:E2415 ,
+                                                n4c:E2416 ,
+                                                n4c:E3095 ;
+                                     dc:title "NFDI4Culture Ontology" ;
+                                     dcterms:abstract "The NFDICORE ontology is the core ontology that describes all resouces (datasets, data providers, persons, projects and other entities) in the data domain of nfdi. It serves as the basis for further domain specific ontologies, e.g. nfdi4culture ontology, nfdi4matwerk ontology, and contains mappings to numerous external vocabularies and ontologies."@en ;
+                                     dcterms:hasVersion "1.2" ;
+                                     rdfs:label "NFDI4Culture Ontology (cto)" ;
+                                     rdfs:seeAlso <https://nfdi4culture.de/ontology.json> ,
+                                                  <https://nfdi4culture.de/ontology.nt> ,
+                                                  <https://nfdi4culture.de/ontology.rdf> ,
+                                                  <https://nfdi4culture.de/ontology.ttl> ,
+                                                  <https://nfdi4culture.de/ontology/about.html> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/format
+dc:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+dcterms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+dcterms:hasVersion rdf:type owl:AnnotationProperty .
+
+
+###  http://rdfs.org/ns/void#feature
+void:feature rdf:type owl:AnnotationProperty .
+
+
+###  https://nfdi4culture.de/ontology#acronym
+cto:acronym rdf:type owl:AnnotationProperty ;
+            rdfs:label "cto:acronym"@en .
+
+
+###  https://nfdi4culture.de/ontology#example
+cto:example rdf:type owl:AnnotationProperty ;
+            rdfs:label "cto:example"@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/cerif/frapo/hasFundingAgency
+frapo:hasFundingAgency rdf:type owl:ObjectProperty ;
+                       owl:equivalentProperty cto:fundingOrganisation .
+
+
+###  http://purl.org/dc/terms/conformsTo
+dcterms:conformsTo rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty cto:standard .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty cto:contributor .
+
+
+###  http://purl.org/dc/terms/format
+dcterms:format rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty cto:license .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty cto:publisher ;
+                  rdfs:domain cto:Work ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( cto:Organization
+                                             cto:Person
+                                             cto:Service
+                                           )
+                             ] .
+
+
+###  http://purl.org/dc/terms/spatial
+dcterms:spatial rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty cto:location .
+
+
+###  http://www.w3.org/ns/dcat#contactPoint
+dcat:contactPoint rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty cto:contactPoint .
+
+
+###  http://xmlns.com/foaf/0.1/fundedBy
+foaf:fundedBy rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty cto:funder .
+
+
+###  https://nfdi4culture.de/ontology#bestPractice
+cto:bestPractice rdf:type owl:ObjectProperty ;
+                 owl:inverseOf cto:bestPracticeOf ;
+                 rdfs:domain cto:Work ;
+                 rdfs:range cto:Specification ;
+                 rdfs:comment "The property is a relationship between a work and the best practice."@en ;
+                 rdfs:label "best practice"@en .
+
+
+###  https://nfdi4culture.de/ontology#bestPracticeOf
+cto:bestPracticeOf rdf:type owl:ObjectProperty ;
+                   rdfs:label "best practice of"@en .
+
+
+###  https://nfdi4culture.de/ontology#contactPoint
+cto:contactPoint rdf:type owl:ObjectProperty ;
+                 owl:inverseOf cto:contactPointOf ;
+                 rdfs:domain cto:Work ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( cto:Organization
+                                            cto:Person
+                                          )
+                            ] ;
+                 rdfs:comment "The property is a relationship between a work and a contact point."@en ;
+                 rdfs:label "contact point"@en .
+
+
+###  https://nfdi4culture.de/ontology#contactPointOf
+cto:contactPointOf rdf:type owl:ObjectProperty ;
+                   rdfs:label "contact point of"@en .
+
+
+###  https://nfdi4culture.de/ontology#contributor
+cto:contributor rdf:type owl:ObjectProperty ;
+                owl:inverseOf cto:contributorOf ;
+                rdfs:domain cto:Work ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( cto:Organization
+                                           cto:Person
+                                         )
+                           ] ;
+                rdfs:comment "The property related a work to a person or an organisation responsible for making contributions to the work."@en ;
+                rdfs:label "contributor"@en .
+
+
+###  https://nfdi4culture.de/ontology#contributorOf
+cto:contributorOf rdf:type owl:ObjectProperty .
+
+
+###  https://nfdi4culture.de/ontology#country
+cto:country rdf:type owl:ObjectProperty ;
+            owl:inverseOf cto:countryOf ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( cto:City
+                                        cto:FederalState
+                                      )
+                        ] ;
+            rdfs:range cto:Country ;
+            rdfs:comment "The property relates a city or a state to a country where it is located."@en ;
+            rdfs:label "country"@en .
+
+
+###  https://nfdi4culture.de/ontology#countryOf
+cto:countryOf rdf:type owl:ObjectProperty ;
+              rdfs:label "country of"@en .
+
+
+###  https://nfdi4culture.de/ontology#exportFormat
+cto:exportFormat rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dcterms:format ;
+                 owl:inverseOf cto:exportFormatOf ;
+                 rdfs:domain cto:Work ;
+                 rdfs:range cto:MediaType ;
+                 rdfs:comment "The property relates a work to the format available for the export of a work."@en ;
+                 rdfs:label "export format"@en .
+
+
+###  https://nfdi4culture.de/ontology#exportFormatOf
+cto:exportFormatOf rdf:type owl:ObjectProperty ;
+                   rdfs:label "export format of"@en .
+
+
+###  https://nfdi4culture.de/ontology#federalState
+cto:federalState rdf:type owl:ObjectProperty ;
+                 owl:inverseOf cto:federalStateOf ;
+                 rdfs:domain cto:City ;
+                 rdfs:range cto:FederalState ;
+                 rdfs:comment "The property relates a city to a federal state where it is located."@en ;
+                 rdfs:label "federal state"@en .
+
+
+###  https://nfdi4culture.de/ontology#federalStateOf
+cto:federalStateOf rdf:type owl:ObjectProperty ;
+                   rdfs:label "federal state of"@en .
+
+
+###  https://nfdi4culture.de/ontology#funder
+cto:funder rdf:type owl:ObjectProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( cto:Organization
+                                      cto:Project
+                                    )
+                      ] ;
+           rdfs:comment "The property relates thing to an organisation or a project that provided funding for it. The subproperties are used to specify more specific funding relationships. "@en ;
+           rdfs:label "funder"@en .
+
+
+###  https://nfdi4culture.de/ontology#funderOf
+cto:funderOf rdf:type owl:ObjectProperty ;
+             rdfs:label "funder of"@en .
+
+
+###  https://nfdi4culture.de/ontology#fundingOrganisation
+cto:fundingOrganisation rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf cto:funder ;
+                        owl:inverseOf cto:fundingOrganisationOf ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( cto:Project
+                                                    cto:Work
+                                                  )
+                                    ] ;
+                        rdfs:range cto:Organization ;
+                        rdfs:comment "The property relates a work or a project to the organisation that provided funding for it."@en ;
+                        rdfs:label "funding organisation"@en .
+
+
+###  https://nfdi4culture.de/ontology#fundingOrganisationOf
+cto:fundingOrganisationOf rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf cto:funderOf ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( cto:Project
+                                                      cto:Work
+                                                    )
+                                      ] ;
+                          rdfs:label "funding organisation of"@en .
+
+
+###  https://nfdi4culture.de/ontology#fundingProject
+cto:fundingProject rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cto:funder ;
+                   owl:inverseOf cto:fundingProjectOf ;
+                   rdfs:domain cto:Work ;
+                   rdfs:range cto:Project ;
+                   rdfs:comment "The property relateds a work to the project that provided funding for it."@en ;
+                   rdfs:label "funding project"@en .
+
+
+###  https://nfdi4culture.de/ontology#fundingProjectOf
+cto:fundingProjectOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cto:funderOf ;
+                     rdfs:label "funding project of"@en .
+
+
+###  https://nfdi4culture.de/ontology#instance
+cto:instance rdf:type owl:ObjectProperty ;
+             owl:inverseOf cto:instanceOf ;
+             rdfs:domain cto:Service ;
+             rdfs:range cto:Service ;
+             rdfs:comment "The property is a relationship between an RDM Tool to its running instance."@en ;
+             rdfs:label "instance"@en .
+
+
+###  https://nfdi4culture.de/ontology#instanceOf
+cto:instanceOf rdf:type owl:ObjectProperty ;
+               rdfs:label "instance of"@en .
+
+
+###  https://nfdi4culture.de/ontology#license
+cto:license rdf:type owl:ObjectProperty ;
+            owl:inverseOf cto:licenseOf ;
+            rdfs:domain cto:Work ;
+            rdfs:range cto:License ;
+            rdfs:comment "The property is a relationship between a work and a license file." ;
+            rdfs:label "license"@en .
+
+
+###  https://nfdi4culture.de/ontology#licenseOf
+cto:licenseOf rdf:type owl:ObjectProperty ;
+              rdfs:label "license of"@en .
+
+
+###  https://nfdi4culture.de/ontology#location
+cto:location rdf:type owl:ObjectProperty ;
+             owl:inverseOf cto:locationOf ;
+             rdfs:domain owl:Thing ;
+             rdfs:range cto:Place ;
+             rdfs:comment "The property is a relationship between a thing and a place its located at. "@en ;
+             rdfs:label "location"@en .
+
+
+###  https://nfdi4culture.de/ontology#locationOf
+cto:locationOf rdf:type owl:ObjectProperty ;
+               rdfs:label "location of"@en .
+
+
+###  https://nfdi4culture.de/ontology#mapping
+cto:mapping rdf:type owl:ObjectProperty ;
+            owl:inverseOf cto:mappingOf ;
+            rdfs:domain cto:Work ;
+            rdfs:range cto:Mapping ;
+            rdfs:comment "The property is a relationship between a a data resource and its various representations, e.g. same resource that exists in different data formats. "@en ;
+            rdfs:label "mapping"@en .
+
+
+###  https://nfdi4culture.de/ontology#mappingOf
+cto:mappingOf rdf:type owl:ObjectProperty ;
+              rdfs:label "mapping of"@en .
+
+
+###  https://nfdi4culture.de/ontology#mediaType
+cto:mediaType rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf dcterms:format ;
+              owl:inverseOf cto:mediaTypeOf ;
+              rdfs:domain cto:Work ;
+              rdfs:range cto:MediaType ;
+              rdfs:comment "The property relates a contrbution to its data format."@en ;
+              rdfs:label "media type"@en .
+
+
+###  https://nfdi4culture.de/ontology#mediaTypeOf
+cto:mediaTypeOf rdf:type owl:ObjectProperty ;
+                rdfs:label "media type of"@en .
+
+
+###  https://nfdi4culture.de/ontology#objectType
+cto:objectType rdf:type owl:ObjectProperty ;
+               owl:inverseOf cto:objectTypeOf ;
+               rdfs:domain cto:Collection ;
+               rdfs:range cto:ObjectType ;
+               rdfs:comment "The property relates a data collection to the type of object it contains. "@en ;
+               rdfs:label "object type"@en .
+
+
+###  https://nfdi4culture.de/ontology#objectTypeOf
+cto:objectTypeOf rdf:type owl:ObjectProperty ;
+                 rdfs:label "object type of"@en .
+
+
+###  https://nfdi4culture.de/ontology#parentOrganisation
+cto:parentOrganisation rdf:type owl:ObjectProperty ;
+                       owl:equivalentProperty <https://schema.org/parentOrganization> ;
+                       owl:inverseOf cto:subsidiaryOrganization ;
+                       rdfs:domain cto:Organization ;
+                       rdfs:range cto:Organization ;
+                       rdfs:comment """The property is a parental relationship between organisations. 
+"""@en ;
+                       rdfs:label "parent organisation"@en .
+
+
+###  https://nfdi4culture.de/ontology#partnerOrganization
+cto:partnerOrganization rdf:type owl:ObjectProperty ,
+                                 owl:SymmetricProperty ;
+                        rdfs:domain cto:Organization ;
+                        rdfs:range cto:Organization .
+
+
+###  https://nfdi4culture.de/ontology#programmingLanguage
+cto:programmingLanguage rdf:type owl:ObjectProperty ;
+                        owl:equivalentProperty <https://schema.org/programmingLanguage> ;
+                        owl:inverseOf cto:programmingLanguageOf ;
+                        rdfs:domain cto:Software ;
+                        rdfs:range cto:ProgrammingLanguage ;
+                        rdfs:comment "The property links software to a programming language its written in. " ;
+                        rdfs:label "programming language"@en .
+
+
+###  https://nfdi4culture.de/ontology#programmingLanguageOf
+cto:programmingLanguageOf rdf:type owl:ObjectProperty ;
+                          rdfs:label "programming language of"@en .
+
+
+###  https://nfdi4culture.de/ontology#provisionType
+cto:provisionType rdf:type owl:ObjectProperty ;
+                  rdfs:domain cto:ProvidedWork ;
+                  rdfs:range cto:Work ;
+                  rdfs:comment "The property links a work provided by a community to its type."@en ;
+                  rdfs:label "provision type"@en .
+
+
+###  https://nfdi4culture.de/ontology#publisher
+cto:publisher rdf:type owl:ObjectProperty ;
+              owl:inverseOf cto:publisherOf ;
+              rdfs:domain cto:Work ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( cto:Organization
+                                         cto:Person
+                                       )
+                         ] ;
+              rdfs:comment "The property is a relationship between a resource and an organisation or a person responsible for publishing it."@en ;
+              rdfs:label "publisher"@en .
+
+
+###  https://nfdi4culture.de/ontology#publisherOf
+cto:publisherOf rdf:type owl:ObjectProperty ;
+                rdfs:label "publisher of"@en .
+
+
+###  https://nfdi4culture.de/ontology#relatedProject
+cto:relatedProject rdf:type owl:ObjectProperty ,
+                            owl:SymmetricProperty ;
+                   rdfs:domain cto:Project ;
+                   rdfs:range cto:Project ;
+                   rdfs:comment "The property is a relationship between related projects. The property is symmetric."@en ;
+                   rdfs:label "related project"@en .
+
+
+###  https://nfdi4culture.de/ontology#semanticExpressivity
+cto:semanticExpressivity rdf:type owl:ObjectProperty ;
+                         owl:inverseOf cto:semanticExpressivityOf ;
+                         rdfs:domain cto:Work ;
+                         rdfs:range cto:SemanticExpressivity ;
+                         rdfs:comment "The property relates a work to its semantic expressivity spectrum."@en ;
+                         rdfs:label "semantic expressivity"@en .
+
+
+###  https://nfdi4culture.de/ontology#semanticExpressivityOf
+cto:semanticExpressivityOf rdf:type owl:ObjectProperty ;
+                           rdfs:label "semantic expressivity of"@en .
+
+
+###  https://nfdi4culture.de/ontology#serviceType
+cto:serviceType rdf:type owl:ObjectProperty ;
+                owl:inverseOf cto:serviceTypeOf ;
+                rdfs:domain cto:Service ;
+                rdfs:range cto:ServiceType ;
+                rdfs:comment "The property relates a service to its type." ;
+                rdfs:label "service type"@en .
+
+
+###  https://nfdi4culture.de/ontology#serviceTypeOf
+cto:serviceTypeOf rdf:type owl:ObjectProperty ;
+                  rdfs:label "service type of"@en .
+
+
+###  https://nfdi4culture.de/ontology#software
+cto:software rdf:type owl:ObjectProperty ;
+             owl:inverseOf cto:sofwareOf ;
+             rdfs:domain cto:Work ;
+             rdfs:range cto:Software ;
+             rdfs:comment "The property is a relationship between a work and a software it uses."@en ;
+             rdfs:label "software"@en .
+
+
+###  https://nfdi4culture.de/ontology#softwareOf
+cto:softwareOf rdf:type owl:ObjectProperty ;
+               rdfs:label "software of"@en .
+
+
+###  https://nfdi4culture.de/ontology#sofwareOf
+cto:sofwareOf rdf:type owl:ObjectProperty ;
+              rdfs:label "sofware of"@en .
+
+
+###  https://nfdi4culture.de/ontology#sparqlEndpoint
+cto:sparqlEndpoint rdf:type owl:ObjectProperty ;
+                   owl:inverseOf cto:sparqlEndpointOf ;
+                   rdfs:domain cto:Work ;
+                   rdfs:range cto:Work ;
+                   rdfs:comment "The property relates a data resource to its SPARQL Endpoint. "@en ;
+                   rdfs:label "sparql endpoint"@en .
+
+
+###  https://nfdi4culture.de/ontology#sparqlEndpointOf
+cto:sparqlEndpointOf rdf:type owl:ObjectProperty ;
+                     rdfs:label "sparql endpoint of"@en .
+
+
+###  https://nfdi4culture.de/ontology#specification
+cto:specification rdf:type owl:ObjectProperty ;
+                  owl:inverseOf cto:specificationOf ;
+                  rdfs:domain cto:Work ;
+                  rdfs:range cto:Specification ;
+                  rdfs:comment "The property is a relationship between a resource and the international standard or norm."@en ;
+                  rdfs:label "specification"@en .
+
+
+###  https://nfdi4culture.de/ontology#specificationOf
+cto:specificationOf rdf:type owl:ObjectProperty ;
+                    rdfs:label "specification of"@en .
+
+
+###  https://nfdi4culture.de/ontology#standard
+cto:standard rdf:type owl:ObjectProperty ;
+             owl:inverseOf cto:standardOf ;
+             rdfs:domain cto:Work ;
+             rdfs:range cto:Standard ;
+             rdfs:comment "The property relates a work to the standard it relies on."@en ;
+             rdfs:label "standard"@en .
+
+
+###  https://nfdi4culture.de/ontology#standardOf
+cto:standardOf rdf:type owl:ObjectProperty ;
+               rdfs:label "standard of"@en .
+
+
+###  https://nfdi4culture.de/ontology#subjectArea
+cto:subjectArea rdf:type owl:ObjectProperty ;
+                owl:inverseOf cto:subjectAreaOf ;
+                rdfs:domain cto:Work ;
+                rdfs:range cto:AcademicDiscipline ;
+                rdfs:comment "The property is a relationship between a work and its academic discipline, subject area or domain."@en ;
+                rdfs:label "subject area"@en .
+
+
+###  https://nfdi4culture.de/ontology#subjectAreaOf
+cto:subjectAreaOf rdf:type owl:ObjectProperty ;
+                  rdfs:label "subject area of"@en .
+
+
+###  https://nfdi4culture.de/ontology#subsidiaryOrganization
+cto:subsidiaryOrganization rdf:type owl:ObjectProperty ;
+                           rdfs:label "subsidiary organization"@en .
+
+
+###  https://nfdi4culture.de/ontology#technology
+cto:technology rdf:type owl:ObjectProperty ;
+               owl:inverseOf cto:technologyOf ;
+               rdfs:domain cto:Work ;
+               rdfs:range cto:TechnologicalMeans ;
+               rdfs:comment "The property is a relationship between a resource and a technology it uses. "@en ;
+               rdfs:label "technology"@en .
+
+
+###  https://nfdi4culture.de/ontology#technologyOf
+cto:technologyOf rdf:type owl:ObjectProperty ;
+                 rdfs:label "technology of"@en .
+
+
+###  https://schema.org/parentOrganization
+<https://schema.org/parentOrganization> rdf:type owl:ObjectProperty .
+
+
+###  https://schema.org/programmingLanguage
+<https://schema.org/programmingLanguage> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://nfdi4culture.de/ontology#areaCode
+cto:areaCode rdf:type owl:DatatypeProperty ;
+             rdfs:domain cto:Organization ;
+             rdfs:range rdfs:Literal ;
+             rdfs:label "area code"@en .
+
+
+###  https://nfdi4culture.de/ontology#emailAddress
+cto:emailAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:domain cto:Organization ;
+                 rdfs:range rdfs:Literal ;
+                 rdfs:label "email address"@en .
+
+
+###  https://nfdi4culture.de/ontology#url
+cto:url rdf:type owl:DatatypeProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:range xsd:anyURI ;
+        rdfs:comment "URL of a thing"@en ;
+        rdfs:label "url"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Person
+<http://dbpedia.org/ontology/Person> rdf:type owl:Class ;
+                                     owl:equivalentClass cto:Person .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000025
+obo:IAO_0000025 rdf:type owl:Class ;
+                owl:equivalentClass cto:ProgrammingLanguage .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000245
+obo:OBI_0000245 rdf:type owl:Class ;
+                owl:equivalentClass cto:Organization .
+
+
+###  http://purl.org/cerif/frapo/Service
+frapo:Service rdf:type owl:Class ;
+              owl:equivalentClass cto:Service .
+
+
+###  http://purl.org/dc/terms/BibliographicResource
+dcterms:BibliographicResource rdf:type owl:Class ;
+                              owl:equivalentClass cto:Publication .
+
+
+###  http://purl.org/dc/terms/Location
+dcterms:Location rdf:type owl:Class ;
+                 owl:equivalentClass cto:Place .
+
+
+###  http://purl.org/dc/terms/MediaType
+dcterms:MediaType rdf:type owl:Class ;
+                  owl:equivalentClass cto:MediaType .
+
+
+###  http://purl.org/dc/terms/Standard
+dcterms:Standard rdf:type owl:Class ;
+                 owl:equivalentClass cto:Standard .
+
+
+###  http://purl.org/spar/fabio/ItemCollection
+fabio:ItemCollection rdf:type owl:Class ;
+                     owl:equivalentClass cto:Collection .
+
+
+###  http://purl.org/spar/fabio/ScholarlyWork
+fabio:ScholarlyWork rdf:type owl:Class ;
+                    owl:equivalentClass cto:Publication .
+
+
+###  http://purl.org/spar/fabio/Specification
+fabio:Specification rdf:type owl:Class ;
+                    owl:equivalentClass cto:Specification .
+
+
+###  http://purl.org/spar/fabio/SubjectDiscipline
+fabio:SubjectDiscipline rdf:type owl:Class ;
+                        owl:equivalentClass cto:AcademicDiscipline .
+
+
+###  http://schema.org/CreativeWork
+schema:CreativeWork rdf:type owl:Class .
+
+
+###  http://schema.org/Intangible
+schema:Intangible rdf:type owl:Class .
+
+
+###  http://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              owl:equivalentClass cto:Person .
+
+
+###  http://schema.org/Product
+schema:Product rdf:type owl:Class .
+
+
+###  http://schema.org/Service
+schema:Service rdf:type owl:Class ;
+               rdfs:subClassOf schema:Intangible .
+
+
+###  http://www.ebi.ac.uk/swo/SWO_0000001
+swo:SWO_0000001 rdf:type owl:Class ;
+                owl:equivalentClass cto:Software .
+
+
+###  http://www.ebi.ac.uk/swo/SWO_0000002
+swo:SWO_0000002 rdf:type owl:Class ;
+                owl:equivalentClass cto:License .
+
+
+###  http://www.w3.org/2006/vcard/ns#Location
+vcard:Location rdf:type owl:Class ;
+               owl:equivalentClass cto:Place .
+
+
+###  http://www.w3.org/2006/vcard/ns#Organization
+vcard:Organization rdf:type owl:Class ;
+                   owl:equivalentClass cto:Organization .
+
+
+###  http://www.w3.org/ns/org#Organization
+org:Organization rdf:type owl:Class ;
+                 owl:equivalentClass cto:Organization .
+
+
+###  http://xmlns.com/foaf/0.1/Document
+foaf:Document rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  owl:equivalentClass cto:Organization .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            owl:equivalentClass cto:Person .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+foaf:Project rdf:type owl:Class ;
+             owl:equivalentClass cto:Project .
+
+
+###  https://dbpedia.org/ontology/City
+dbo:City rdf:type owl:Class ;
+         owl:equivalentClass cto:City .
+
+
+###  https://dbpedia.org/ontology/Country
+dbo:Country rdf:type owl:Class ;
+            owl:equivalentClass cto:Country .
+
+
+###  https://dbpedia.org/ontology/Place
+dbo:Place rdf:type owl:Class ;
+          owl:equivalentClass cto:Place .
+
+
+###  https://dbpedia.org/ontology/ProgrammingLanguage
+dbo:ProgrammingLanguage rdf:type owl:Class ;
+                        owl:equivalentClass cto:ProgrammingLanguage .
+
+
+###  https://dbpedia.org/ontology/federalState
+dbo:federalState rdf:type owl:Class ;
+                 owl:equivalentClass cto:FederalState .
+
+
+###  https://nfdi4culture.de/ontology#AcademicDiscipline
+cto:AcademicDiscipline rdf:type owl:Class ;
+                       rdfs:comment "An academic discipline, a research field or domain of a resource, e.g. a data portal or a filed of study of a person."@en ;
+                       rdfs:label "academic discipline"@en ;
+                       cto:example wikidata:Q12271 ,
+                                   "Architecture, Art History, Musicology, Media Studies, Performing Arts"@en .
+
+
+###  https://nfdi4culture.de/ontology#City
+cto:City rdf:type owl:Class ;
+         owl:equivalentClass <https://schema.org/City> ;
+         rdfs:subClassOf cto:Place ;
+         rdfs:comment "A city or a town where the thing is located."@en ;
+         rdfs:label "city"@en ;
+         cto:example "Berlin, Hannover, Kyiv"@en .
+
+
+###  https://nfdi4culture.de/ontology#Collection
+cto:Collection rdf:type owl:Class ;
+               owl:equivalentClass <https://schema.org/Collection> ;
+               rdfs:subClassOf schema:Product ;
+               rdfs:comment "A tangible collection of valuables published or curated by an organisation or a person."@en ;
+               rdfs:label "collection"@en ;
+               cto:example "a museum collection"@en .
+
+
+###  https://nfdi4culture.de/ontology#Consortium
+cto:Consortium rdf:type owl:Class ;
+               rdfs:subClassOf cto:Organization ;
+               rdfs:comment "NFDI consortia grouped by a discipline based in a science-led process managed by the German Research Foundation (DFG)."@en ;
+               rdfs:label "consortium"@en ;
+               cto:example "NFDI4Culture, NFDI-MatWerk, DataPLANT." .
+
+
+###  https://nfdi4culture.de/ontology#Country
+cto:Country rdf:type owl:Class ;
+            owl:equivalentClass <https://schema.org/Country> ;
+            rdfs:subClassOf cto:Place ;
+            rdfs:comment "A country where the thing is located."@en ;
+            rdfs:label "country"@en .
+
+
+###  https://nfdi4culture.de/ontology#DataPortal
+cto:DataPortal rdf:type owl:Class ;
+               rdfs:subClassOf schema:Service ;
+               rdfs:comment "An online platform that provides access to data collections and datasets."@en ;
+               rdfs:label "data portal"@en ;
+               cto:example "Bach digital, KultSam, MusiXplora"@en .
+
+
+###  https://nfdi4culture.de/ontology#DevelopmentWork
+cto:DevelopmentWork rdf:type owl:Class ;
+                    rdfs:comment "A resource that identifies an ongoing development of standards, services, data models, vocabularies, ontologies, etc."@en ;
+                    rdfs:label "development work"@en ;
+                    cto:example "Development of a controlled vocabulary for audivisual material in publication and research data; Extension of the AAT vocabulary for the history of architecture"@en .
+
+
+###  https://nfdi4culture.de/ontology#FederalState
+cto:FederalState rdf:type owl:Class ;
+                 owl:equivalentClass <https://schema.org/State> ;
+                 rdfs:subClassOf cto:Place ;
+                 rdfs:comment "A federal state where the thing is located."@en ;
+                 rdfs:label "federal state"@en ;
+                 cto:example "Sachsen, Berlin"@de .
+
+
+###  https://nfdi4culture.de/ontology#InstanceOfRDMTool
+cto:InstanceOfRDMTool rdf:type owl:Class ;
+                      rdfs:subClassOf schema:Product ;
+                      rdfs:comment "A resource that identifies a single copy of a Tool running on a single physical or virtual server."@en ;
+                      rdfs:label "instance of research data management tool"@en ;
+                      cto:example "Research Data management Organiser, EPrints"@en .
+
+
+###  https://nfdi4culture.de/ontology#License
+cto:License rdf:type owl:Class ;
+            rdfs:comment "A document that provides legal guidelines for the use of a resource, e.g. a software."@en ;
+            rdfs:label "license"@en ;
+            cto:example "cc-by-3, Digital Peer Publishing Lizenz"@en .
+
+
+###  https://nfdi4culture.de/ontology#Mapping
+cto:Mapping rdf:type owl:Class ;
+            rdfs:comment "A resource that documents a mapping from a format\\/vocabulary to other format\\/vocabulary."@en ;
+            rdfs:label "mapping"@en ;
+            cto:example "Bach Digital Mapping, WeGA Gudielines"@en .
+
+
+###  https://nfdi4culture.de/ontology#MediaType
+cto:MediaType rdf:type owl:Class ;
+              rdfs:comment "A format or a physical medium of digital data."@en ;
+              rdfs:label "media type"@en ;
+              cto:example "doc, avi, epub" .
+
+
+###  https://nfdi4culture.de/ontology#ObjectType
+cto:ObjectType rdf:type owl:Class ;
+               rdfs:comment "A resource that identifies the type of object in a data collection."@en ;
+               rdfs:label "object type"@en ;
+               cto:example "book, photograph, music sheet"@en .
+
+
+###  https://nfdi4culture.de/ontology#Organization
+cto:Organization rdf:type owl:Class ;
+                 owl:equivalentClass <https://schema.org/Organization> ;
+                 rdfs:comment "An organisation of some kind, e.g. research organisation or business organisation"@en ;
+                 rdfs:label "organization"@en ;
+                 cto:example "Universit\\u00e4tsbibliothek Leipzig, S\\u00e4chsisches Wirtschaftsarchiv, Museen der Stadt K\\u00f6ln" .
+
+
+###  https://nfdi4culture.de/ontology#Person
+cto:Person rdf:type owl:Class ;
+           rdfs:comment "A resource that represents a single person."@en ;
+           rdfs:label "person"@en ;
+           cto:example "Harald Sack, Tabea Tietz, Sasha Bruns, Etienne Posthumus" .
+
+
+###  https://nfdi4culture.de/ontology#Place
+cto:Place rdf:type owl:Class ;
+          owl:equivalentClass <https://schema.org/Place> ;
+          rdfs:comment "A spatial region, e.g. country, city or district."@en ;
+          rdfs:label "place"@en ;
+          cto:example "Hessen, Berlin, Schweiz" .
+
+
+###  https://nfdi4culture.de/ontology#ProgrammingLanguage
+cto:ProgrammingLanguage rdf:type owl:Class ;
+                        owl:equivalentClass modsci:ProgrammingLanguage ;
+                        rdfs:subClassOf cto:TechnologicalMeans ;
+                        rdfs:comment "A formal language used for implementing a software."@en ;
+                        rdfs:label "programming language"@en ;
+                        cto:example "Java, Ruby, C++, Perl, PHP" .
+
+
+###  https://nfdi4culture.de/ontology#Project
+cto:Project rdf:type owl:Class ;
+            rdfs:comment "A scientific or business endeavor that aims to conclude an investigation or to answer a research question."@en ;
+            rdfs:label "project"@en ;
+            cto:example "Freisch\\u00fctz digital, Corpus Vitrearum Medii Aevi" .
+
+
+###  https://nfdi4culture.de/ontology#ProvidedWork
+cto:ProvidedWork rdf:type owl:Class ;
+                 rdfs:subClassOf cto:Work ;
+                 rdfs:comment "A ressource that identifies a work provided to the nfdi."@en ;
+                 rdfs:label "provided work"@en .
+
+
+###  https://nfdi4culture.de/ontology#Publication
+cto:Publication rdf:type owl:Class ;
+                rdfs:subClassOf schema:CreativeWork ,
+                                foaf:Document ;
+                rdfs:comment "A published scholarly work that reports on ongoing activity about or within a resource, e.g. a dataset."@en ;
+                rdfs:label "publication"@en ;
+                cto:example "MusiXplora: Visual analysis of a musicological encyclopedia, Textkategorien in kompositorischen Werkstattdokumenten" .
+
+
+###  https://nfdi4culture.de/ontology#SemanticExpressivity
+cto:SemanticExpressivity rdf:type owl:Class ;
+                         rdfs:comment "A resource that identifies the level of the semantic expressivity of the work. Five instances are now included in nfdicore."@en ;
+                         rdfs:label "semantic expressivity"@en ;
+                         cto:example "controlled vocabulary, ontology, taxonomy"@en .
+
+
+###  https://nfdi4culture.de/ontology#Service
+cto:Service rdf:type owl:Class ;
+            rdfs:subClassOf schema:Service ;
+            rdfs:comment "A service, expertise or skill provided by an organisation or a person."@en ;
+            rdfs:label "service"@en ;
+            cto:example "Data curation for HeiDATA, Expertise for the development and application of LIDO"@en .
+
+
+###  https://nfdi4culture.de/ontology#ServiceType
+cto:ServiceType rdf:type owl:Class ;
+                rdfs:comment "A resource that identifies the type of a service."@en ;
+                rdfs:label "service type"@en ;
+                cto:example "Expertise, advertisement, curation"@en .
+
+
+###  https://nfdi4culture.de/ontology#Software
+cto:Software rdf:type owl:Class ;
+             owl:equivalentClass sd:Software ;
+             rdfs:subClassOf schema:Product ;
+             rdfs:comment "A computer software provided by an organisation or a person."@en ;
+             rdfs:label "software"@en ;
+             cto:example "Edirom, Muscat" .
+
+
+###  https://nfdi4culture.de/ontology#Specification
+cto:Specification rdf:type owl:Class ;
+                  rdfs:subClassOf schema:Product ;
+                  rdfs:comment "A set of requirements, guidelines, standards contributed by an organisation or a person."@en ;
+                  rdfs:label "specification"@en ;
+                  cto:example "RDF, SPARQL, Federation" .
+
+
+###  https://nfdi4culture.de/ontology#Standard
+cto:Standard rdf:type owl:Class ;
+             rdfs:subClassOf cto:Specification ;
+             rdfs:comment "An international standard and norm that can be used to evaluate or create services."@en ;
+             rdfs:label "standard"@en ;
+             cto:example "ISO 15511, DINI-Zertifikat" .
+
+
+###  https://nfdi4culture.de/ontology#TechnologicalMeans
+cto:TechnologicalMeans rdf:type owl:Class ;
+                       rdfs:comment "A technology, e.g. a web application or a programming framework used in a resource."@en ;
+                       rdfs:label "technological means"@en ;
+                       cto:example "Groovy on Grails, Angular"@en .
+
+
+###  https://nfdi4culture.de/ontology#Website
+cto:Website rdf:type owl:Class ;
+            rdfs:subClassOf schema:Product ,
+                            foaf:Document ;
+            rdfs:comment "A collection of webpages contributed by an organisation or a person."@en ;
+            rdfs:label "website"@en ;
+            cto:example "https:\\/\\/opac.rism.info" .
+
+
+###  https://nfdi4culture.de/ontology#Work
+cto:Work rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Class ;
+                           owl:unionOf ( schema:CreativeWork
+                                         schema:Intangible
+                                         schema:Product
+                                       )
+                         ] ;
+         rdfs:comment "A ressource that identifies the most generic kind of work and may be associated with any kind of creative work, e.g. datasets, books, movies, photographs; offered products and services, e.g. data portals, data curation, data digitization; and intangible things, e.g. subjects of creative works, topics of events, offers, a list of enumerations."@en ;
+         rdfs:label "work"@en .
+
+
+###  https://schema.org/City
+<https://schema.org/City> rdf:type owl:Class .
+
+
+###  https://schema.org/Collection
+<https://schema.org/Collection> rdf:type owl:Class ;
+                                rdfs:subClassOf schema:CreativeWork .
+
+
+###  https://schema.org/Country
+<https://schema.org/Country> rdf:type owl:Class .
+
+
+###  https://schema.org/Organization
+<https://schema.org/Organization> rdf:type owl:Class .
+
+
+###  https://schema.org/Place
+<https://schema.org/Place> rdf:type owl:Class .
+
+
+###  https://schema.org/State
+<https://schema.org/State> rdf:type owl:Class .
+
+
+###  https://w3id.org/okn/o/sd#Software
+sd:Software rdf:type owl:Class .
+
+
+###  https://w3id.org/skgo/modsci#ProgrammingLanguage
+modsci:ProgrammingLanguage rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://nfdi4culture.de/ontology.json
+<https://nfdi4culture.de/ontology.json> rdf:type owl:NamedIndividual ;
+                                        dc:format "application/ld+json" ;
+                                        void:feature <http://www.w3.org/ns/formats/JSON-LD> .
+
+
+###  https://nfdi4culture.de/ontology.nt
+<https://nfdi4culture.de/ontology.nt> rdf:type owl:NamedIndividual ;
+                                      dc:format "application/n-triples" ;
+                                      void:feature <http://www.w3.org/ns/formats/N-Triples> .
+
+
+###  https://nfdi4culture.de/ontology.rdf
+<https://nfdi4culture.de/ontology.rdf> rdf:type owl:NamedIndividual ;
+                                       dc:format "application/rdf+xml" ;
+                                       void:feature <http://www.w3.org/ns/formats/RDF_XML> .
+
+
+###  https://nfdi4culture.de/ontology.ttl
+<https://nfdi4culture.de/ontology.ttl> rdf:type owl:NamedIndividual ;
+                                       dc:format "text/turtle" ;
+                                       void:feature <http://www.w3.org/ns/formats/Turtle> .
+
+
+###  https://nfdi4culture.de/ontology#ControlledVocabulary
+cto:ControlledVocabulary rdf:type owl:NamedIndividual ,
+                                  cto:SemanticExpressivity ;
+                         rdfs:comment "A list of terms, natural language definitions and naming conventions. In comparisson to a glossary, there is a dedicated curation mechanism for new terms in a controlled vocabulary."@en ;
+                         rdfs:label "controlled vocabulary"@en .
+
+
+###  https://nfdi4culture.de/ontology#Glossary
+cto:Glossary rdf:type owl:NamedIndividual ,
+                      cto:SemanticExpressivity ;
+             rdfs:comment "A list of terms and their with natural language definitions."@en ;
+             rdfs:label "glossary"@en .
+
+
+###  https://nfdi4culture.de/ontology#Ontology
+cto:Ontology rdf:type owl:NamedIndividual ,
+                      cto:SemanticExpressivity ;
+             rdfs:comment "A complete, machine-readable specification of a conceptualization using URIs (and then IRIs) for all elements, properties and relationship types."@en ;
+             rdfs:label "onotology"@en .
+
+
+###  https://nfdi4culture.de/ontology#Taxonomy
+cto:Taxonomy rdf:type owl:NamedIndividual ,
+                      cto:SemanticExpressivity ;
+             rdfs:comment "A data model in a class hierarchy, where all concepts inherit their behaviour from the super-class concept. Taxonomies can be strict or non strict and can contain instances."@en ;
+             rdfs:label "taxonomy"@en .
+
+
+###  https://nfdi4culture.de/ontology#Thesaurus
+cto:Thesaurus rdf:type owl:NamedIndividual ,
+                       cto:SemanticExpressivity ;
+              rdfs:comment "A structured list of terms and relations between the terms, as e.g. broader/narrower."@en ;
+              rdfs:label "thesaurus"@en .
+
+
+###  https://nfdi4culture.de/ontology/about.html
+<https://nfdi4culture.de/ontology/about.html> rdf:type owl:NamedIndividual ;
+                                              dc:format "text/html" ;
+                                              void:feature <http://www.w3.org/ns/formats/RDFa> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
