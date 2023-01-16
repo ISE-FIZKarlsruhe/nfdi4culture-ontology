@@ -182,20 +182,6 @@ cto:authorityTypeOf rdf:type owl:ObjectProperty ;
                     rdfs:label "authority type of"@en .
 
 
-###  https://nfdi4culture.de/ontology#bestPractice
-cto:bestPractice rdf:type owl:ObjectProperty ;
-                 owl:inverseOf cto:bestPracticeOf ;
-                 rdfs:domain cto:Work ;
-                 rdfs:range cto:BestPractice ;
-                 rdfs:comment "The property is a relationship between a data portal and the best practice."@en ;
-                 rdfs:label "best practice"@en .
-
-
-###  https://nfdi4culture.de/ontology#bestPracticeOf
-cto:bestPracticeOf rdf:type owl:ObjectProperty ;
-                   rdfs:label "best practice of"@en .
-
-
 ###  https://nfdi4culture.de/ontology#contactPoint
 cto:contactPoint rdf:type owl:ObjectProperty ;
                  owl:inverseOf cto:contactPointOf ;
@@ -809,14 +795,6 @@ cto:AuthorityType rdf:type owl:Class ;
                   rdfs:comment "The type of an authority used for the establishment and maintainance of consistent forms of terms."@en ;
                   rdfs:label "authority type"@en ;
                   cto:example "Thesaurus, Authority File, Authority List"@en .
-
-
-###  https://nfdi4culture.de/ontology#BestPractice
-cto:BestPractice rdf:type owl:Class ;
-                 rdfs:subClassOf schema:Product ;
-                 rdfs:comment "A resource that identifies a standard or preferred procedure within specific domain."@en ;
-                 rdfs:label "best practice"@en ;
-                 cto:example "Persistent Identifier, DMB standards"@en .
 
 
 ###  https://nfdi4culture.de/ontology#City
