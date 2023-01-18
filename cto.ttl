@@ -36,7 +36,7 @@
                                                 n4c:E2416 ,
                                                 n4c:E3095 ;
                                      dc:title "NFDI4Culture Ontology" ;
-                                     dcterms:abstract "The NFDICORE ontology is the core ontology that describes all resouces (datasets, data providers, persons, projects and other entities) in the data domain of nfdi. It serves as the basis for further domain specific ontologies, e.g. nfdi4culture ontology, nfdi4matwerk ontology, and contains mappings to numerous external vocabularies and ontologies."@en ;
+                                     dcterms:abstract "The NFDI4Culture ontology is the contology that describes all resouces (datasets, data providers, persons, projects and other entities) in the data domain of nfdi4culture. The cto_mapping version contains mappings to numerous external vocabularies and ontologies."@en ;
                                      dcterms:hasVersion "1.2" ;
                                      rdfs:label "NFDI4Culture Ontology (cto)" ;
                                      rdfs:seeAlso <https://nfdi4culture.de/ontology.json> ,
