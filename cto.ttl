@@ -819,7 +819,7 @@ cto:Glossary rdf:type owl:NamedIndividual ,
 cto:Ontology rdf:type owl:NamedIndividual ,
                       cto:SemanticExpressivity ;
              rdfs:comment "A complete, machine-readable specification of a conceptualization using URIs (and then IRIs) for all elements, properties and relationship types."@en ;
-             rdfs:label "onotology"@en .
+             rdfs:label "ontology"@en .
 
 
 ###  https://nfdi4culture.de/ontology#Taxonomy
