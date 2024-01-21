@@ -1,5 +1,7 @@
 @prefix : <https://nfdi4culture.de/ontology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix cto: <https://nfdi4culture.de/ontology#> .
+@prefix n4c: <https://nfdi4culture.de/id/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -7,8 +9,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix n4c: <https://nfdi4culture.de/id/> .
 @prefix nfdicore: <http://nfdi.fiz-karlsruhe.de/ontology/> .
 @base <https://nfdi4culture.de/ontology#> .
 
@@ -27,10 +27,25 @@
                                                   <https://nfdi4culture.de/ontology.ttl> ,
                                                   <https://nfdi4culture.de/ontology/about.html> .
 
-
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+dcterms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+dcterms:hasVersion rdf:type owl:AnnotationProperty .
+
 
 ###  https://nfdi.fiz-karlsruhe.de/ontology/example
 <https://nfdi.fiz-karlsruhe.de/ontology/example> rdf:type owl:AnnotationProperty .
@@ -48,11 +63,19 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://nfdi.fiz-karlsruhe.de/ontology/licence
+nfdicore:licence rdf:type owl:ObjectProperty .
+
+
+###  http://nfdi.fiz-karlsruhe.de/ontology/publisher
+nfdicore:publisher rdf:type owl:ObjectProperty .
+
+
 ###  http://purl.org/dc/terms/isPartOf
-<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
-                                    rdfs:range <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
-                                    rdfs:comment "This property connects a resource and the larger resource it belongs to, e.g. an individual item to the dataset it is part of."@en .
+dcterms:isPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
+                 rdfs:range <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
+                 rdfs:comment "This property connects a resource and the larger resource it belongs to, e.g. an individual item to the dataset it is part of."@en .
 
 
 ###  http://purl.org/ontology/mo/lyrics
@@ -67,6 +90,10 @@ xsd:date rdf:type rdfs:Datatype .
                           rdfs:range owl:Thing .
 
 
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:ObjectProperty .
+
+
 ###  https://nfdi4culture.de/ontology#aat
 cto:aat rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf cto:externalVocabulary ;
@@ -75,6 +102,16 @@ cto:aat rdf:type owl:ObjectProperty ;
         rdfs:comment "The property relates an item to a concept, term, or classification type in Art & Architecture Thesaurus."@en ;
         rdfs:label "aat"@en ;
         <https://nfdi.fiz-karlsruhe.de/ontology/example> "A stained glass window artwork \"Engel mit Dudelsack\" has a related aat entry <http://vocab.getty.edu/page/aat/300263722>"@en .
+
+
+###  https://nfdi4culture.de/ontology#ddbID
+cto:ddbID rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://schema.org/url> ;
+          rdfs:domain cto:Item ;
+          rdfs:range owl:Thing ;
+          rdfs:comment "The property relates the resource to the DDB API Endpoint associated with the resource."@en ;
+          rdfs:label "DDB API"^^rdfs:Literal ;
+          <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://api.deutsche-digitale-bibliothek.de/items/OUOATUXI6I7XMWYRRKAXGXGEM3E6JD3D/source/record"^^rdfs:Literal .
 
 
 ###  https://nfdi4culture.de/ontology#externalVocabulary
@@ -125,6 +162,16 @@ cto:iconclass rdf:type owl:ObjectProperty ;
               <https://nfdi.fiz-karlsruhe.de/ontology/example> "A stained glass window artwork \"Engel mit Dudelsack\" has a related iconclass entry <https://iconclass.org/11G21>"@en .
 
 
+###  https://nfdi4culture.de/ontology#iiifImageAPI
+cto:iiifImageAPI rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://schema.org/url> ;
+                 rdfs:domain cto:Item ;
+                 rdfs:range owl:Thing ;
+                 rdfs:comment "The property relates the resource to the IIIF Image API associated with the image of the resource."@en ;
+                 rdfs:label "IIIF Image API"^^rdfs:Literal ;
+                 <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://heidicon.ub.uni-heidelberg.de/iiif/2/597256:51961/info.json"^^rdfs:Literal .
+
+
 ###  https://nfdi4culture.de/ontology#itemType
 cto:itemType rdf:type owl:ObjectProperty ;
              rdfs:domain cto:Item ;
@@ -139,6 +186,16 @@ For example:
              <https://nfdi.fiz-karlsruhe.de/ontology/example> """http://vocab.getty.edu/aat/300003725 (altars (religious fixtures))
 http://vocab.getty.edu/aat/300047090 (sculpture (visual works))
 https://www.wikidata.org/wiki/Q101687 (altar)"""@en .
+
+
+###  https://nfdi4culture.de/ontology#oai-pmhAPI
+cto:oai-pmhAPI rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://schema.org/url> ;
+               rdfs:domain cto:Item ;
+               rdfs:range owl:Thing ;
+               rdfs:comment "The property relates the resource to the OAI-PMH API Endpoint associated with the resource."@en ;
+               rdfs:label "OAI-PMH API"^^rdfs:Literal ;
+               <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74"^^rdfs:Literal .
 
 
 ###  https://nfdi4culture.de/ontology#relatedItem
@@ -189,6 +246,16 @@ cto:rism rdf:type owl:ObjectProperty ;
          <https://nfdi.fiz-karlsruhe.de/ontology/example> "A musical composition \"Frühlingsgruß\" has a related rism entry <https://rism.online/subjects/25227>"@en .
 
 
+###  https://nfdi4culture.de/ontology#sourceFile
+cto:sourceFile rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://schema.org/url> ;
+               rdfs:domain cto:Item ;
+               rdfs:range owl:Thing ;
+               rdfs:comment "The property links a resource to the URL of a data source from which it originates, e.g. in an API endpoint."@en ;
+               rdfs:label "source file"^^rdfs:Literal ;
+               <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74"^^rdfs:Literal .
+
+
 ###  https://nfdi4culture.de/ontology#subjectConcept
 cto:subjectConcept rdf:type owl:ObjectProperty ;
                    rdfs:domain cto:Item ;
@@ -217,12 +284,6 @@ cto:wikidata rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://nfdi.fiz-karlsruhe.de/ontology/url
-nfdicore:url rdf:type owl:DatatypeProperty ;
-             rdfs:domain owl:Thing ;
-             rdfs:range xsd:anyURI .
-
 
 ###  http://purl.org/ontology/mo/text
 <http://purl.org/ontology/mo/text> rdf:type owl:DatatypeProperty ;
@@ -260,16 +321,6 @@ cto:creationPeriod rdf:type owl:DatatypeProperty ;
                    <https://nfdi.fiz-karlsruhe.de/ontology/example> "\"1888\", \"1380-01-01T00:00:00/1400-12-31T23:59:59\", \"18-19 Jh\""^^rdfs:Literal .
 
 
-###  https://nfdi4culture.de/ontology#ddbID
-cto:ddbID rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf nfdicore:url ;
-          rdfs:domain <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
-          rdfs:range xsd:anyURI ;
-          rdfs:comment "The property relates the resource to the DDB API Endpoint associated with the resource."@en ;
-          rdfs:label "DDB API"^^rdfs:Literal ;
-          <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://api.deutsche-digitale-bibliothek.de/items/OUOATUXI6I7XMWYRRKAXGXGEM3E6JD3D/source/record" .
-
-
 ###  https://nfdi4culture.de/ontology#distructionDate
 cto:distructionDate rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf schema:temporalCoverage ;
@@ -288,16 +339,6 @@ cto:existencePeriod rdf:type owl:DatatypeProperty ;
                     rdfs:comment "The property links an item to the time period that indicates the time span during which the item existed. The property should only be used when the use of cto:creationDate and cto:distructionDate is not possible."@en ,
                                  "existence period"@en ;
                     <https://nfdi.fiz-karlsruhe.de/ontology/example> "\"17 Jahrhundert\", \"1890s\""@en .
-
-
-###  https://nfdi4culture.de/ontology#iiifImageAPI
-cto:iiifImageAPI rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf nfdicore:url ;
-                 rdfs:domain <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
-                 rdfs:range xsd:anyURI ;
-                 rdfs:comment "The property relates the resource to the IIIF Image API associated with the image of the resource."@en ;
-                 rdfs:label "IIIF Image API"^^rdfs:Literal ;
-                 <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://heidicon.ub.uni-heidelberg.de/iiif/2/597256:51961/info.json"^^rdfs:Literal .
 
 
 ###  https://nfdi4culture.de/ontology#incipit
@@ -329,16 +370,6 @@ cto:locationLiteral rdf:type owl:DatatypeProperty ;
                     <https://nfdi.fiz-karlsruhe.de/ontology/example> "\"Abtei Altenberg\", \"Berlin\""^^rdfs:Literal .
 
 
-###  https://nfdi4culture.de/ontology#oai-pmhAPI
-cto:oai-pmhAPI rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf nfdicore:url ;
-               rdfs:domain <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
-               rdfs:range xsd:anyURI ;
-               rdfs:comment "The property relates the resource to the OAI-PMH API Endpoint associated with the resource."@en ;
-               rdfs:label "OAI-PMH API"^^rdfs:Literal ;
-               <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74" .
-
-
 ###  https://nfdi4culture.de/ontology#personLiteral
 cto:personLiteral rdf:type owl:DatatypeProperty ;
                   rdfs:domain cto:Item ;
@@ -347,16 +378,6 @@ cto:personLiteral rdf:type owl:DatatypeProperty ;
                                "cto:personLiteral should only be used when associated persons lack URIs or when the use of cto:relatedPerson is not possible."@en ;
                   rdfs:label "person literal"@en ;
                   <https://nfdi.fiz-karlsruhe.de/ontology/example> "\"Felix Cziossek\""^^rdfs:Literal .
-
-
-###  https://nfdi4culture.de/ontology#sourceFile
-cto:sourceFile rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf nfdicore:url ;
-               rdfs:domain <https://nfdi.fiz-karlsruhe.de/ontology/Resource> ;
-               rdfs:range xsd:anyURI ;
-               rdfs:comment "The property links a resource to the URL of a data source from which it originates, e.g. in an API endpoint."@en ;
-               rdfs:label "source file"@en ;
-               <https://nfdi.fiz-karlsruhe.de/ontology/example> "https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74" .
 
 
 ###  https://nfdi4culture.de/ontology#subjectConceptLiteral
