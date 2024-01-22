@@ -1,0 +1,412 @@
+@prefix : <https://nfdi4culture.de/ontology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cto: <https://nfdi4culture.de/ontology#> .
+@prefix n4c: <https://nfdi4culture.de/id/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix nfdicore: <http://nfdi.fiz-karlsruhe.de/ontology/> .
+@base <https://nfdi4culture.de/ontology#> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://creativecommons.org/licenses/by/3.0/de
+<http://creativecommons.org/licenses/by/3.0/de> rdf:type owl:NamedIndividual .
+
+
+###  http://d-nb.info/gnd/129657379
+<http://d-nb.info/gnd/129657379> rdf:type owl:NamedIndividual .
+
+
+###  http://d-nb.info/gnd/4045895-7
+<http://d-nb.info/gnd/4045895-7> rdf:type owl:NamedIndividual .
+
+
+###  http://d-nb.info/gnd/4316770-6
+<http://d-nb.info/gnd/4316770-6> rdf:type owl:NamedIndividual .
+
+
+###  http://digi.ub.uni-heidelberg.de/diglit/punch1848/0004
+<http://digi.ub.uni-heidelberg.de/diglit/punch1848/0004> rdf:type owl:NamedIndividual .
+
+
+###  http://foto.biblhertz.it/obj08016650
+<http://foto.biblhertz.it/obj08016650> rdf:type owl:NamedIndividual .
+
+
+###  http://fotothek.biblhertz.it/bh/2048px/bh003277.jpg
+<http://fotothek.biblhertz.it/bh/2048px/bh003277.jpg> rdf:type owl:NamedIndividual .
+
+
+###  http://fotothek.biblhertz.it/bh/2048px/bh590824.jpg
+<http://fotothek.biblhertz.it/bh/2048px/bh590824.jpg> rdf:type owl:NamedIndividual .
+
+
+###  http://fotothek.biblhertz.it/bh/2048px/bh590962.jpg
+<http://fotothek.biblhertz.it/bh/2048px/bh590962.jpg> rdf:type owl:NamedIndividual .
+
+
+###  http://slod.fiz-karlsruhe.de/labw-2-2599390
+<http://slod.fiz-karlsruhe.de/labw-2-2599390> rdf:type owl:NamedIndividual ,
+                                                       cto:Item ;
+                                              nfdicore:licence <https://creativecommons.org/licenses/by/2.0/> ;
+                                              nfdicore:publisher <http://slod.fiz-karlsruhe.de/labw-2-2599390> ;
+                                              <http://schema.org/image> <http://slod.fiz-karlsruhe.de/images/slod/2-2599390-1.jpg> ,
+                                                                        <http://slod.fiz-karlsruhe.de/images/slod/2-2599390-2.jpg> ,
+                                                                        <http://slod.fiz-karlsruhe.de/images/slod/2-2599390-3.jpg> ;
+                                              cto:gnd <http://d-nb.info/gnd/4316770-6> ,
+                                                      <https://d-nb.info/gnd/116463619> ,
+                                                      <https://d-nb.info/gnd/118613723> ;
+                                              cto:relatedPerson <http://www.wikidata.org/entity/Q55638867> ,
+                                                                <http://www.wikidata.org/entity/Q692> ,
+                                                                <https://d-nb.info/gnd/116463619> ,
+                                                                <https://d-nb.info/gnd/118613723> ;
+                                              cto:subjectConcept <http://d-nb.info/gnd/4316770-6> ,
+                                                                 <http://www.wikidata.org/entity/Q221211> ;
+                                              cto:wikidata <http://www.wikidata.org/entity/Q221211> ,
+                                                           <http://www.wikidata.org/entity/Q55638867> ,
+                                                           <http://www.wikidata.org/entity/Q692> ;
+                                              cto:creationDate "1923-03-11"^^xsd:date ;
+                                              cto:subjectConceptLiteral "Schauspiel"@de ;
+                                              rdfs:label "Was ihr wollt (William Shakespeare)"@en .
+
+
+###  http://slod.fiz-karlsruhe.de/images/slod/2-2599390-1.jpg
+<http://slod.fiz-karlsruhe.de/images/slod/2-2599390-1.jpg> rdf:type owl:NamedIndividual .
+
+
+###  http://slod.fiz-karlsruhe.de/images/slod/2-2599390-2.jpg
+<http://slod.fiz-karlsruhe.de/images/slod/2-2599390-2.jpg> rdf:type owl:NamedIndividual .
+
+
+###  http://slod.fiz-karlsruhe.de/images/slod/2-2599390-3.jpg
+<http://slod.fiz-karlsruhe.de/images/slod/2-2599390-3.jpg> rdf:type owl:NamedIndividual .
+
+
+###  http://slod.fiz-karlsruhe.de/repository/de1951
+<http://slod.fiz-karlsruhe.de/repository/de1951> rdf:type owl:NamedIndividual .
+
+
+###  http://sws.geonames.org/11427995
+<http://sws.geonames.org/11427995> rdf:type owl:NamedIndividual .
+
+
+###  http://vocab.getty.edu/page/aat/300263722
+<http://vocab.getty.edu/page/aat/300263722> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q221211
+<http://www.wikidata.org/entity/Q221211> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q55638867
+<http://www.wikidata.org/entity/Q55638867> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q692
+<http://www.wikidata.org/entity/Q692> rdf:type owl:NamedIndividual .
+
+
+###  https://api.deutsche-digitale-bibliothek.de/items/7YR6M735EGBHOOGHMZDE6HS4DUDOVEW2/source/record
+<https://api.deutsche-digitale-bibliothek.de/items/7YR6M735EGBHOOGHMZDE6HS4DUDOVEW2/source/record> rdf:type owl:NamedIndividual .
+
+
+###  https://corpusvitrearum.de/id/F4485
+<https://corpusvitrearum.de/id/F4485> rdf:type owl:NamedIndividual ,
+                                               cto:Item ;
+                                      nfdicore:licence <https://creativecommons.org/licenses/by-nc/4.0/> ;
+                                      nfdicore:publisher n4c:E1834 ;
+                                      <http://schema.org/image> <https://corpusvitrearum.de/typo3temp/cvma/_processed_/pics/medium/4485.jpg> ;
+                                      <http://schema.org/url> <https://corpusvitrearum.de/id/F4485> ;
+                                      cto:aat <http://vocab.getty.edu/page/aat/300263722> ;
+                                      cto:geonames <http://sws.geonames.org/11427995> ;
+                                      cto:iconclass <https://iconclass.org/11G21> ;
+                                      cto:itemType <http://vocab.getty.edu/page/aat/300263722> ;
+                                      cto:relatedLocation <http://sws.geonames.org/11427995> ;
+                                      cto:subjectConcept <https://iconclass.org/11G21> ;
+                                      cto:aproximatePeriod "vor 1397" ;
+                                      cto:creationPeriod "1380-01-01T00:00:00/1400-12-31T23:59:59" ;
+                                      cto:itemTypeLiteral "Glaskunst (Objektgattung)"@de ;
+                                      rdfs:label "Engel mit Dudelsack"@de .
+
+
+###  https://corpusvitrearum.de/typo3temp/cvma/_processed_/pics/medium/4485.jpg
+<https://corpusvitrearum.de/typo3temp/cvma/_processed_/pics/medium/4485.jpg> rdf:type owl:NamedIndividual .
+
+
+###  https://creativecommons.org/licenses/by-nc/4.0/
+<https://creativecommons.org/licenses/by-nc/4.0/> rdf:type owl:NamedIndividual .
+
+
+###  https://creativecommons.org/licenses/by/2.0/
+<https://creativecommons.org/licenses/by/2.0/> rdf:type owl:NamedIndividual .
+
+
+###  https://creativecommons.org/publicdomain/zero/1.0
+<https://creativecommons.org/publicdomain/zero/1.0> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/1037099060
+<https://d-nb.info/gnd/1037099060> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/116463619
+<https://d-nb.info/gnd/116463619> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/118613723
+<https://d-nb.info/gnd/118613723> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/118680609
+<https://d-nb.info/gnd/118680609> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/127825118
+<https://d-nb.info/gnd/127825118> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/2002498-8
+<https://d-nb.info/gnd/2002498-8> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4002855-0
+<https://d-nb.info/gnd/4002855-0> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4021845-4
+<https://d-nb.info/gnd/4021845-4> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4029670-2
+<https://d-nb.info/gnd/4029670-2> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4074335-4
+<https://d-nb.info/gnd/4074335-4> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4127718-1
+<https://d-nb.info/gnd/4127718-1> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4127793-4
+<https://d-nb.info/gnd/4127793-4> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4135144-7
+<https://d-nb.info/gnd/4135144-7> rdf:type owl:NamedIndividual .
+
+
+###  https://d-nb.info/gnd/4725126-8
+<https://d-nb.info/gnd/4725126-8> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/a135cff7-832f-42d0-9385-8306bb297568/file/id/200688/file_version/name/small/disposition/inline
+<https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/a135cff7-832f-42d0-9385-8306bb297568/file/id/200688/file_version/name/small/disposition/inline> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/d4cb26ea-e047-48e7-bb66-a662a41e0ae1/file/id/344612/file_version/name/huge/disposition/inline
+<https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/d4cb26ea-e047-48e7-bb66-a662a41e0ae1/file/id/344612/file_version/name/huge/disposition/inline> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/ed84679c-e602-4b7c-9e77-f8b5c9c97b74/file/id/692518/file_version/name/huge/disposition/inline
+<https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/ed84679c-e602-4b7c-9e77-f8b5c9c97b74/file/id/692518/file_version/name/huge/disposition/inline> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:a135cff7-832f-42d0-9385-8306bb297568
+<https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:a135cff7-832f-42d0-9385-8306bb297568> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74
+<https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:4453df43-5663-44ad-aa89-7a173ede034c
+<https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:4453df43-5663-44ad-aa89-7a173ede034c> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/detail/1269901
+<https://heidicon.ub.uni-heidelberg.de/detail/1269901> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/detail/729667
+<https://heidicon.ub.uni-heidelberg.de/detail/729667> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A200688
+<https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A200688> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A344612
+<https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A344612> rdf:type owl:NamedIndividual .
+
+
+###  https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A692518
+<https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A692518> rdf:type owl:NamedIndividual .
+
+
+###  https://iconclass.org/11G21
+<https://iconclass.org/11G21> rdf:type owl:NamedIndividual .
+
+
+###  https://nfdi.fiz-karlsruhe.de/id/ark:/60538/13848743575095035780
+<https://nfdi.fiz-karlsruhe.de/id/ark:/60538/13848743575095035780> rdf:type owl:NamedIndividual ,
+                                                                            cto:Item ;
+                                                                   nfdicore:publisher <https://nfdi4culture.de/resource/E1979> ;
+                                                                   <http://schema.org/image> <https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/ed84679c-e602-4b7c-9e77-f8b5c9c97b74/file/id/692518/file_version/name/huge/disposition/inline> ;
+                                                                   <http://schema.org/url> <https://heidicon.ub.uni-heidelberg.de/detail/1269901> ;
+                                                                   cto:gnd <https://d-nb.info/gnd/4002855-0> ;
+                                                                   cto:iiifImageAPI <https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A692518> ;
+                                                                   cto:itemType <https://d-nb.info/gnd/4002855-0> ;
+                                                                   cto:sourceFile <https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:ed84679c-e602-4b7c-9e77-f8b5c9c97b74> ;
+                                                                   cto:creationPeriod "2021-01-07" ;
+                                                                   cto:subjectConceptLiteral "Monumente"@de ;
+                                                                   rdfs:label "Matū Ajimā Mandira, stone sword, view from NE"@en .
+
+
+###  https://nfdi.fiz-karlsruhe.de/id/ark:/60538/14384775308556492773
+<https://nfdi.fiz-karlsruhe.de/id/ark:/60538/14384775308556492773> rdf:type owl:NamedIndividual ,
+                                                                            cto:Item ;
+                                                                   nfdicore:licence <https://www.deutsche-digitale-bibliothek.de/lizenzen/rv-fz> ;
+                                                                   nfdicore:publisher n4c:E1876 ;
+                                                                   <http://schema.org/image> <http://fotothek.biblhertz.it/bh/2048px/bh003277.jpg> ,
+                                                                                             <http://fotothek.biblhertz.it/bh/2048px/bh590824.jpg> ,
+                                                                                             <http://fotothek.biblhertz.it/bh/2048px/bh590962.jpg> ;
+                                                                   <http://schema.org/url> <http://foto.biblhertz.it/obj08016650> ;
+                                                                   cto:gnd <http://d-nb.info/gnd/129657379> ,
+                                                                           <http://d-nb.info/gnd/4045895-7> ;
+                                                                   cto:itemType <http://d-nb.info/gnd/4045895-7> ;
+                                                                   cto:relatedPerson <http://d-nb.info/gnd/129657379> ;
+                                                                   cto:sourceFile <https://api.deutsche-digitale-bibliothek.de/items/7YR6M735EGBHOOGHMZDE6HS4DUDOVEW2/source/record> ;
+                                                                   cto:itemTypeLiteral "Grabmal"@de ;
+                                                                   rdfs:label "Grabmonument des Kardinals Alano Coetivy"@de .
+
+
+###  https://nfdi.fiz-karlsruhe.de/id/ark:/60538/16044522858287028949
+<https://nfdi.fiz-karlsruhe.de/id/ark:/60538/16044522858287028949> rdf:type owl:NamedIndividual ,
+                                                                            <http://schema.org/MediaObject> ,
+                                                                            cto:Item ;
+                                                                   nfdicore:licence <https://creativecommons.org/publicdomain/zero/1.0> ;
+                                                                   nfdicore:publisher <https://d-nb.info/gnd/2002498-8> ,
+                                                                                      n4c:E1979 ;
+                                                                   <http://schema.org/image> <https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/d4cb26ea-e047-48e7-bb66-a662a41e0ae1/file/id/344612/file_version/name/huge/disposition/inline> ;
+                                                                   cto:gnd <https://d-nb.info/gnd/1037099060> ,
+                                                                           <https://d-nb.info/gnd/118680609> ,
+                                                                           <https://d-nb.info/gnd/4021845-4> ,
+                                                                           <https://d-nb.info/gnd/4029670-2> ,
+                                                                           <https://d-nb.info/gnd/4074335-4> ,
+                                                                           <https://d-nb.info/gnd/4127718-1> ,
+                                                                           <https://d-nb.info/gnd/4135144-7> ,
+                                                                           <https://d-nb.info/gnd/4725126-8> ;
+                                                                   cto:iiifImageAPI <https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A344612> ;
+                                                                   cto:itemType <https://d-nb.info/gnd/4021845-4> ,
+                                                                                <https://d-nb.info/gnd/4029670-2> ,
+                                                                                <https://d-nb.info/gnd/4135144-7> ;
+                                                                   cto:relatedItem <http://digi.ub.uni-heidelberg.de/diglit/punch1848/0004> ;
+                                                                   cto:relatedLocation <https://d-nb.info/gnd/4074335-4> ;
+                                                                   cto:relatedPerson <https://d-nb.info/gnd/118680609> ;
+                                                                   cto:sourceFile <https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:4453df43-5663-44ad-aa89-7a173ede034c> ;
+                                                                   cto:subjectConcept <https://d-nb.info/gnd/1037099060> ,
+                                                                                      <https://d-nb.info/gnd/4127718-1> ,
+                                                                                      <https://d-nb.info/gnd/4725126-8> ;
+                                                                   cto:itemTypeLiteral "Fliegende Blätter"@de ,
+                                                                                       "UB Britische Karikaturen"@de ;
+                                                                   rdfs:label "Preface"@en .
+
+
+###  https://nfdi.fiz-karlsruhe.de/id/ark:/60538/6077816772506314614
+<https://nfdi.fiz-karlsruhe.de/id/ark:/60538/6077816772506314614> rdf:type owl:NamedIndividual ,
+                                                                           <http://schema.org/MediaObject> ,
+                                                                           cto:Item ;
+                                                                  nfdicore:publisher <https://d-nb.info/gnd/2002498-8> ,
+                                                                                     n4c:E1979 ;
+                                                                  <http://schema.org/image> <https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/a135cff7-832f-42d0-9385-8306bb297568/file/id/200688/file_version/name/small/disposition/inline> ;
+                                                                  <http://schema.org/url> <https://heidicon.ub.uni-heidelberg.de/detail/729667> ;
+                                                                  cto:gnd <https://d-nb.info/gnd/127825118> ,
+                                                                          <https://d-nb.info/gnd/4021845-4> ,
+                                                                          <https://d-nb.info/gnd/4029670-2> ,
+                                                                          <https://d-nb.info/gnd/4127793-4> ,
+                                                                          <https://d-nb.info/gnd/4135144-7> ;
+                                                                  cto:iiifImageAPI <https://heidicon.ub.uni-heidelberg.de/iiif/2/%3A200688> ;
+                                                                  cto:itemType <https://d-nb.info/gnd/4021845-4> ,
+                                                                               <https://d-nb.info/gnd/4029670-2> ,
+                                                                               <https://d-nb.info/gnd/4135144-7> ;
+                                                                  cto:relatedLocation <https://d-nb.info/gnd/4127793-4> ;
+                                                                  cto:relatedPerson <https://d-nb.info/gnd/127825118> ;
+                                                                  cto:sourceFile <https://heidicon.ub.uni-heidelberg.de/api/v1/plugin/base/oai/oai?verb=GetRecord&metadataPrefix=lido&identifier=oai:heidicon.ub.uni-heidelberg.de:a135cff7-832f-42d0-9385-8306bb297568> ;
+                                                                  cto:creationPeriod 1888 ;
+                                                                  cto:itemTypeLiteral "Fliegende Blätter"@de ;
+                                                                  rdfs:label "Gedichte eines Kleinstädters"@de .
+
+
+###  https://nfdi4culture.de/id/E1834
+n4c:E1834 rdf:type owl:NamedIndividual .
+
+
+###  https://nfdi4culture.de/id/E1876
+n4c:E1876 rdf:type owl:NamedIndividual .
+
+
+###  https://nfdi4culture.de/id/E1979
+n4c:E1979 rdf:type owl:NamedIndividual .
+
+
+###  https://nfdi4culture.de/ontology#So_sei_gegrüßt_viel_tausendmal
+cto:So_sei_gegrüßt_viel_tausendmal rdf:type owl:NamedIndividual ;
+                                   <http://purl.org/ontology/mo/text> "So sei gegrüßt viel tausendmal, holder, (holder) Frühling! grüßen wir dich froh mit Sang und Schall, mit Sang und Schall. Du kommst, und froh ist alle Welt, holder, (holder) Frühling! Es freut sich Wiese, Wald und Feld, holder, (holder) Frühling!"@de ;
+                                   rdfs:label "So sei gegrüßt viel tausendmal"@de .
+
+
+###  https://nfdi4culture.de/resource/E1979
+<https://nfdi4culture.de/resource/E1979> rdf:type owl:NamedIndividual .
+
+
+###  https://rism.online/
+<https://rism.online/> rdf:type owl:NamedIndividual .
+
+
+###  https://rism.online/people/131206
+<https://rism.online/people/131206> rdf:type owl:NamedIndividual .
+
+
+###  https://rism.online/sources/201001959
+<https://rism.online/sources/201001959> rdf:type owl:NamedIndividual ,
+                                                 cto:Item ,
+                                                 schema:MusicComposition ;
+                                        nfdicore:licence <http://creativecommons.org/licenses/by/3.0/de> ;
+                                        nfdicore:publisher <https://rism.online/> ;
+                                        <http://purl.org/ontology/mo/lyrics> cto:So_sei_gegrüßt_viel_tausendmal ;
+                                        <http://schema.org/url> <https://rism.online/sources/201001959> ;
+                                        cto:itemType <https://rism.online/subjects/25227> ,
+                                                     <https://rism.online/subjects/25460> ;
+                                        cto:relatedPerson <https://rism.online/people/131206> ;
+                                        cto:rism <https://rism.online/people/131206> ,
+                                                 <https://rism.online/subjects/25227> ,
+                                                 <https://rism.online/subjects/25460> ;
+                                        cto:aproximatePeriod "1890-1910 (19/20)" ;
+                                        cto:creationPeriod "1890-1910 (19/20)" ;
+                                        cto:incipit "4'D/8.6GB4AG/8.6''EC2'A/4.''D8'BAG/4BA" ;
+                                        cto:subjectConceptLiteral "Coro" ,
+                                                                  "Coro S (2), Coro T, Coro B" ;
+                                        rdfs:label "Frühlingsgruß"@de .
+
+
+###  https://rism.online/subjects/25227
+<https://rism.online/subjects/25227> rdf:type owl:NamedIndividual .
+
+
+###  https://rism.online/subjects/25460
+<https://rism.online/subjects/25460> rdf:type owl:NamedIndividual .
+
+
+###  https://www.deutsche-digitale-bibliothek.de/lizenzen/rv-fz
+<https://www.deutsche-digitale-bibliothek.de/lizenzen/rv-fz> rdf:type owl:NamedIndividual .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
