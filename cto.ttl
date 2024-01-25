@@ -50,19 +50,6 @@ dcterms:hasVersion rdf:type owl:AnnotationProperty .
 ###  https://nfdi.fiz-karlsruhe.de/ontology/example
 <https://nfdi.fiz-karlsruhe.de/ontology/example> rdf:type owl:AnnotationProperty .
 
-
-###  https://nfdi4culture.de/ontology#incipit
-cto:incipit rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
 #################################################################
 #    Object Properties
 #################################################################
