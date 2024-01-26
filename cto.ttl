@@ -9,8 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix schema1: <https://schema.org/> .
-@prefix schema2: <http://schema.org/> .
+@prefix schema: <http://schema.org/> .
 @prefix nfdicore: <https://nfdi.fiz-karlsruhe.de/ontology/> .
 @base <https://nfdi4culture.de/ontology#> .
 
@@ -20,7 +19,7 @@
                                                 n4c:E2416 ,
                                                 n4c:E3095 ;
                                      dc:title "NFDI4Culture Ontology" ;
-                                     dcterms:abstract "The NFDI4Culture ontology  describes all resources (datasets, items, data providers, persons, projects and other entities) in the domain of NFDI4Culture."@en ;
+                                     dcterms:abstract "The NFDI4Culture ontology describes all resources (datasets, items, data providers, persons, projects and other entities) in the domain of NFDI4Culture."@en ;
                                      dcterms:hasVersion "2.0" ;
                                      rdfs:label "NFDI4Culture Ontology (cto)" ;
                                      rdfs:seeAlso <https://nfdi4culture.de/ontology.json> ,
@@ -67,7 +66,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/dc/terms/isPartOf
 dcterms:isPartOf rdf:type owl:ObjectProperty ;
-                 owl:equivalentProperty schema2:isPartOf ;
+                 owl:equivalentProperty schema:isPartOf ;
                  rdfs:domain nfdicore:Resource ;
                  rdfs:range nfdicore:Resource ;
                  rdfs:comment "This property establishes a connection between a resource and the overarching resource to which it belongs, e.g. an individual item to the dataset it is part of."@en .
@@ -81,23 +80,23 @@ mo:lyrics rdf:type owl:ObjectProperty ;
 
 
 ###  http://schema.org/image
-schema2:image rdf:type owl:ObjectProperty ;
+schema:image rdf:type owl:ObjectProperty ;
               rdfs:domain cto:Item ;
               rdfs:range owl:Thing .
 
 
 ###  http://schema.org/isPartOf
-schema2:isPartOf rdf:type owl:ObjectProperty .
+schema:isPartOf rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/url
-schema2:url rdf:type owl:ObjectProperty .
+schema:url rdf:type owl:ObjectProperty .
 
 
 ###  https://nfdi4culture.de/ontology#aat
 cto:aat rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf cto:externalVocabulary ;
-        rdfs:domain schema1:CreativeWork ;
+        rdfs:domain schema:CreativeWork ;
         rdfs:range owl:Thing ;
         rdfs:comment "The property relates a creative work resource to a concept, term, or classification type in Art & Architecture Thesaurus."@en ;
         rdfs:label "AAT"@en ;
@@ -106,7 +105,7 @@ cto:aat rdf:type owl:ObjectProperty ;
 
 ###  https://nfdi4culture.de/ontology#ddbAPI
 cto:ddbAPI rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf schema2:url ;
+           rdfs:subPropertyOf schema:url ;
            rdfs:domain cto:Item ;
            rdfs:range owl:Thing ;
            rdfs:comment "The property relates the resource to the DDB API Endpoint associated with the resource."@en ;
@@ -155,7 +154,7 @@ cto:gnd rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#iconclass
 cto:iconclass rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf cto:externalVocabulary ;
-              rdfs:domain schema1:CreativeWork ;
+              rdfs:domain schema:CreativeWork ;
               rdfs:range owl:Thing ;
               rdfs:comment "The property relates a creative work to the subject concept or content of the creative work in the Iconclass classification system."@en ;
               rdfs:label "Iconclass"@en ;
@@ -164,7 +163,7 @@ cto:iconclass rdf:type owl:ObjectProperty ;
 
 ###  https://nfdi4culture.de/ontology#iiifImageAPI
 cto:iiifImageAPI rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf schema2:url ;
+                 rdfs:subPropertyOf schema:url ;
                  rdfs:domain cto:Item ;
                  rdfs:range owl:Thing ;
                  rdfs:comment "The property relates the resource to the IIIF Image API associated with the image of the resource."@en ;
@@ -174,7 +173,7 @@ cto:iiifImageAPI rdf:type owl:ObjectProperty ;
 
 ###  https://nfdi4culture.de/ontology#iiifPresentationAPI
 cto:iiifPresentationAPI rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf schema2:url ;
+                        rdfs:subPropertyOf schema:url ;
                         rdfs:domain cto:Item ;
                         rdfs:range owl:Thing ;
                         rdfs:comment "The property relates the resource to the IIIF Presentation API associated with the resource."@en ;
@@ -186,7 +185,7 @@ cto:iiifPresentationAPI rdf:type owl:ObjectProperty ;
 cto:incipitOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dcterms:isPartOf ;
               rdfs:domain cto:Incipit ;
-              rdfs:range schema1:MusicComposition ;
+              rdfs:range schema:MusicComposition ;
               rdfs:comment "The property connects an incipit and the music composition it belongs to."@en ;
               rdfs:label "incipit of"@en ;
               nfdicore:example "https://rism.online/sources/201001959/incipits/1.1.1 is an incnipit of musical composition \"Frühlingsgruß\" (https://rism.online/sources/201001959) by Robert Schumann."@en .
@@ -220,7 +219,7 @@ https://www.wikidata.org/wiki/Q101687 (altar)"""^^rdfs:Literal .
 
 ###  https://nfdi4culture.de/ontology#oai-pmhAPI
 cto:oai-pmhAPI rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf schema2:url ;
+               rdfs:subPropertyOf schema:url ;
                rdfs:domain cto:Item ;
                rdfs:range owl:Thing ;
                rdfs:comment "The property relates the resource to the OAI-PMH API Endpoint associated with the resource."@en ;
@@ -280,7 +279,7 @@ cto:rism rdf:type owl:ObjectProperty ;
 
 ###  https://nfdi4culture.de/ontology#sourceFile
 cto:sourceFile rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf schema2:url ;
+               rdfs:subPropertyOf schema:url ;
                rdfs:domain cto:Item ;
                rdfs:range owl:Thing ;
                rdfs:comment "The property links a resource to the URL of a data source from which it originates, e.g. in an API endpoint."@en ;
@@ -297,7 +296,7 @@ cto:subjectConcept rdf:type owl:ObjectProperty ;
 For example:
 <:EngelMitDudelsack   cto:subjectConcept <https://iconclass.org/11G21>>
 <:EngelMitDudelsack   cto:iconclass <https://iconclass.org/11G21>>"""@en ,
-                                "The property relates an item to concepts related to the subject of the item within a predefined vocabulary/taxonomy.  It may be used to associate the item with specific ideas, themes, or topics, e.g. iconography, themes from literature, terms, concepts, related works that item is based on. The subject must be taken from a published controlled vocabulary, e.g. AAT, GND, Wikidata, Iconclass."@en ;
+                                "The property relates an item to concepts related to the subject of the item within a predefined vocabulary/taxonomy. It may be used to associate the item with specific ideas, themes, or topics, e.g. iconography, themes from literature, terms, concepts, related works that item is based on. The subject must be taken from a published controlled vocabulary, e.g. AAT, GND, Wikidata, Iconclass."@en ;
                    rdfs:label "subject concept"@en ;
                    nfdicore:example """http://iconclass.org/11H (saints)
 https://iconclass.org/11K (devil(s) and demons)
@@ -338,7 +337,7 @@ mo:text rdf:type owl:DatatypeProperty ;
 
 ###  https://nfdi4culture.de/ontology#approximatePeriod
 cto:approximatePeriod rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf schema1:temporalCoverage ;
+                      rdfs:subPropertyOf schema:temporalCoverage ;
                       rdfs:domain cto:Item ;
                       rdfs:range rdfs:Literal ;
                       rdfs:comment "The property relates an item to the approximate time the item is associated with. It often links to time periods/dates containing temporal constraints, e.g. \"during, before, after\" to approximate the time. The property should only be used to express an estimated or imprecise date associated with an item when the exact date is uncertain or not precisely known."@en ;
@@ -358,7 +357,7 @@ cto:clef rdf:type owl:DatatypeProperty ;
 
 ###  https://nfdi4culture.de/ontology#creationDate
 cto:creationDate rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf schema1:temporalCoverage ;
+                 rdfs:subPropertyOf schema:temporalCoverage ;
                  rdfs:domain cto:Item ;
                  rdfs:range xsd:dateTimeStamp ;
                  rdfs:comment "The property relates an item to the exact date when the item was created or came into existence."@en ;
@@ -368,7 +367,7 @@ cto:creationDate rdf:type owl:DatatypeProperty ;
 
 ###  https://nfdi4culture.de/ontology#creationPeriod
 cto:creationPeriod rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf schema1:temporalCoverage ;
+                   rdfs:subPropertyOf schema:temporalCoverage ;
                    rdfs:domain cto:Item ;
                    rdfs:range rdfs:Literal ;
                    rdfs:comment "The property links an item to the time period that indicates the time span during which the item was created."@en ;
@@ -378,7 +377,7 @@ cto:creationPeriod rdf:type owl:DatatypeProperty ;
 
 ###  https://nfdi4culture.de/ontology#destructionDate
 cto:destructionDate rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf schema1:temporalCoverage ;
+                    rdfs:subPropertyOf schema:temporalCoverage ;
                     rdfs:domain cto:Item ;
                     rdfs:range xsd:dateTimeStamp ;
                     rdfs:comment "The property relates an item to the specific date on which the item ceases to exist or is intentionally terminated, discarded, or removed."@en ;
@@ -388,7 +387,7 @@ cto:destructionDate rdf:type owl:DatatypeProperty ;
 
 ###  https://nfdi4culture.de/ontology#existencePeriod
 cto:existencePeriod rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf schema1:temporalCoverage ;
+                    rdfs:subPropertyOf schema:temporalCoverage ;
                     rdfs:domain cto:Item ;
                     rdfs:range rdfs:Literal ;
                     rdfs:comment "The property links an item to the time period that indicates the time span during which the item existed. The property should only be used when the use of cto:creationDate and cto:distructionDate is not possible."@en ,
@@ -467,7 +466,7 @@ cto:timeSignature rdf:type owl:DatatypeProperty ;
 
 
 ###  https://schema.org/temporalCoverage
-schema1:temporalCoverage rdf:type owl:DatatypeProperty ;
+schema:temporalCoverage rdf:type owl:DatatypeProperty ;
                          rdfs:domain cto:Item ;
                          rdfs:range [ rdf:type rdfs:Datatype ;
                                       owl:unionOf ( rdfs:Literal
@@ -489,12 +488,12 @@ mo:Lyrics rdf:type owl:Class .
 
 ###  http://purl.org/ontology/mo/MusicalWork
 mo:MusicalWork rdf:type owl:Class ;
-               owl:equivalentClass schema1:MusicComposition .
+               owl:equivalentClass schema:MusicComposition .
 
 
 ###  http://schema.org/MediaObject
-schema2:MediaObject rdf:type owl:Class ;
-                    rdfs:subClassOf schema1:CreativeWork .
+schema:MediaObject rdf:type owl:Class ;
+                    rdfs:subClassOf schema:CreativeWork .
 
 
 ###  https://nfdi.fiz-karlsruhe.de/ontology/Organization
@@ -515,7 +514,7 @@ nfdicore:Resource rdf:type owl:Class .
 
 ###  https://nfdi4culture.de/ontology#Incipit
 cto:Incipit rdf:type owl:Class ;
-            rdfs:subClassOf schema1:CreativeWork ;
+            rdfs:subClassOf schema:CreativeWork ;
             rdfs:comment "A resource that represents an opening segment of a music composition."@en ;
             rdfs:label "incipit"@en ;
             nfdicore:example "https://rism.online/sources/201001959/incipits/1.1.1"@en .
@@ -523,33 +522,33 @@ cto:Incipit rdf:type owl:Class ;
 
 ###  https://nfdi4culture.de/ontology#Item
 cto:Item rdf:type owl:Class ;
-         rdfs:subClassOf schema1:CreativeWork ;
+         rdfs:subClassOf schema:CreativeWork ;
          rdfs:comment "A resource that represents a discrete, identifiable item within diverse resources, e.g. individual artwork in a collection, a record in a dataset, or an instance of a service."@en ,
                       """item is a subclass of \\\"schema:CreativeWork\\\", indicating that all items inherently fall under the umbrella of creative works. However, for more refined classification, one can employ more specific subclasses of \\\"schema:CreativeWork,\\\" such as \\\"schema:VisualArtwork,\\\" \\\"schema:Photograph,\\\" or \\\"schema:MusicComposition,\\\" to better define the RDF type of an item and achieve a more granular level of categorization.
 
 The recommended properties to describe items: 
 nfdicore:publisher
-nfdicore:licence
+nfdicore:license
 schema:url
 dcterms:isPartOf
 cto:itemType
 cto:subjectConcept
 cto:relatedPerson
 cto:relatedLocation
-cto:externalVocabularies
+cto:externalVocabulary
 schema:temporalCoverage"""@en ;
          rdfs:label "item"@en ;
-         nfdicore:example "A photograph of the stone sword Matū Ajimā Mandira, a single theatrical performance of  \"Was ihr Wollt\" staged on March 11, 1923, a musical composition \"Frühlingsgruß\", a stained glass window artwork \"Engel mit Dudelsack\", a page from a satirical magazine featuring a poem and a caricature image titled \"Gedichte eines Kleinstädters\" ."@en .
+         nfdicore:example "A photograph of the stone sword Matū Ajimā Mandira, a single theatrical performance of \"Was ihr Wollt\" staged on March 11, 1923, a musical composition \"Frühlingsgruß\", a stained glass window artwork \"Engel mit Dudelsack\", a page from a satirical magazine featuring a poem and a caricature image titled \"Gedichte eines Kleinstädters\" ."@en .
 
 
 ###  https://schema.org/CreativeWork
-schema1:CreativeWork rdf:type owl:Class ;
+schema:CreativeWork rdf:type owl:Class ;
                      rdfs:subClassOf nfdicore:Resource .
 
 
 ###  https://schema.org/MusicComposition
-schema1:MusicComposition rdf:type owl:Class ;
-                         rdfs:subClassOf schema1:CreativeWork .
+schema:MusicComposition rdf:type owl:Class ;
+                         rdfs:subClassOf schema:CreativeWork .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
