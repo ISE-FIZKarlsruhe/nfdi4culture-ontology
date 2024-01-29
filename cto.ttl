@@ -230,7 +230,7 @@ cto:oai-pmhAPI rdf:type owl:ObjectProperty ;
 ###  https://nfdi4culture.de/ontology#relatedItem
 cto:relatedItem rdf:type owl:ObjectProperty ;
                 rdfs:domain cto:Item ;
-                rdfs:range owl:Thing ;
+                rdfs:range cto:Item ;
                 rdfs:comment "The property relates an item to another item it is related to."@en ;
                 rdfs:label "related item"@en .
 
