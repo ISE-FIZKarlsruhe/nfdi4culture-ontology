@@ -188,7 +188,7 @@ cto:incipitOf rdf:type owl:ObjectProperty ;
               rdfs:range schema:MusicComposition ;
               rdfs:comment "The property connects an incipit and the music composition it belongs to."@en ;
               rdfs:label "incipit of"@en ;
-              nfdicore:example "https://rism.online/sources/201001959/incipits/1.1.1 is an incnipit of musical composition \"Frühlingsgruß\" (https://rism.online/sources/201001959) by Robert Schumann."@en .
+              nfdicore:example "https://rism.online/sources/201001959/incipits/1.1.1 is an incipit of musical composition \"Frühlingsgruß\" (https://rism.online/sources/201001959) by Robert Schumann."@en .
 
 
 ###  https://nfdi4culture.de/ontology#itemOf
@@ -196,7 +196,7 @@ cto:itemOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf dcterms:isPartOf ;
            rdfs:domain cto:Item ;
            rdfs:range nfdicore:Resource ;
-           rdfs:comment "This property connects an item and the larger resource it belongs to, e.g. an individual item and the dataset it is part of."@en ;
+           rdfs:comment "This property connects an item and the overarching resource it belongs to, e.g. an individual item and the dataset it is part of."@en ;
            rdfs:label "item of"@en ;
            nfdicore:example "\"Engel mit Dudelsack\" is a single item in the digital image dataset Corpus Vitrearum Medii Aevi Deutschland"@en .
 
@@ -516,7 +516,7 @@ nfdicore:Resource rdf:type owl:Class .
 cto:Incipit rdf:type owl:Class ;
             rdfs:subClassOf schema:CreativeWork ;
             rdfs:comment "A resource that represents an opening segment of a music composition."@en ;
-            rdfs:label "incipit"@en ;
+            rdfs:label "Incipit"@en ;
             nfdicore:example "https://rism.online/sources/201001959/incipits/1.1.1"@en .
 
 
@@ -537,7 +537,7 @@ cto:relatedPerson
 cto:relatedLocation
 cto:externalVocabulary
 schema:temporalCoverage"""@en ;
-         rdfs:label "item"@en ;
+         rdfs:label "Item"@en ;
          nfdicore:example "A photograph of the stone sword Matū Ajimā Mandira, a single theatrical performance of \"Was ihr Wollt\" staged on March 11, 1923, a musical composition \"Frühlingsgruß\", a stained glass window artwork \"Engel mit Dudelsack\", a page from a satirical magazine featuring a poem and a caricature image titled \"Gedichte eines Kleinstädters\" ."@en .
 
 
